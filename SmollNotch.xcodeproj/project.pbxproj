@@ -36,6 +36,7 @@
 		88991D2FB3CF89ECC4A0C5D0 /* NowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930D93E12CBF6B4FD8CB637 /* NowPlaying.swift */; };
 		8CC3A46600B3CF49F8FA2C27 /* NotchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801504216EF85A1173BA047 /* NotchViewModel.swift */; };
 		8F9928E7CFA91E38FBB204F2 /* now_playing.h in Headers */ = {isa = PBXBuildFile; fileRef = 12E1794DFF2B9B7E4263E55F /* now_playing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A4C2778BC0E06266025171B /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = E3FE95F920CBE4FD6EBFAD49 /* AppIcon.icon */; };
 		9A7A11EAEFEDA3440C857278 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0DB4A4C5462656446749B724 /* PrivacyInfo.xcprivacy */; };
 		A289E5538AD6FA5F4798FCD3 /* keys.h in Headers */ = {isa = PBXBuildFile; fileRef = 50288650E87F285F92BE49DB /* keys.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A84D96C7DADF2F1965321644 /* MediaRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA654FB3405A7DD90C0AD56 /* MediaRemote.m */; };
@@ -129,6 +130,7 @@
 		D930D93E12CBF6B4FD8CB637 /* NowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying.swift; sourceTree = "<group>"; };
 		D94FFBCF4684C905BD6E30C6 /* seek.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = seek.m; sourceTree = "<group>"; };
 		DAEA3B5CBB9B95923B064BB0 /* env.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = env.m; sourceTree = "<group>"; };
+		E3FE95F920CBE4FD6EBFAD49 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		F11ABA92BD13350040837F2A /* DemoNowPlayingSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoNowPlayingSource.swift; sourceTree = "<group>"; };
 		F4FC5CD059E278A074AE7FC0 /* NowPlayingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingService.swift; sourceTree = "<group>"; };
 		F5E6E231FE4E481E3FADDDA6 /* send.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = send.m; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 		C51696F89F7BC1748FFC1FF3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E3FE95F920CBE4FD6EBFAD49 /* AppIcon.icon */,
 				42E1F18D7753C30226B41026 /* Assets.xcassets */,
 				58959B38E6450F892FDDAAFE /* Info.plist */,
 				0DB4A4C5462656446749B724 /* PrivacyInfo.xcprivacy */,
@@ -516,6 +519,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A4C2778BC0E06266025171B /* AppIcon.icon in Resources */,
 				EE295DA533B64A9C7C395531 /* Assets.xcassets in Resources */,
 				9A7A11EAEFEDA3440C857278 /* PrivacyInfo.xcprivacy in Resources */,
 				168C92635CDA4A11FC1CC43B /* mediaremote-adapter.pl in Resources */,
