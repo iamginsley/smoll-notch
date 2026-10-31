@@ -4,6 +4,7 @@
 #import <AppKit/AppKit.h>
 #import <CoreFoundation/CoreFoundation.h>
 #import <Foundation/Foundation.h>
+#include <unistd.h>
 
 #import "MediaRemoteAdapter.h"
 #import "adapter/env.h"
@@ -515,10 +516,32 @@ static void handleSignal(int signal) {
     }
 }
 
+// Smoll Notch patch: exit when the launching app goes away (crash, kill -9),
+// otherwise the stream keeps running as an orphan. See PATCHES.md.
+static dispatch_source_t g_parentWatcher;
+
+static void watchParent() {
+    pid_t parent = getppid();
+    if (parent <= 1) {
+        return;
+    }
+    g_parentWatcher = dispatch_source_create(
+        DISPATCH_SOURCE_TYPE_PROC, (uintptr_t)parent, DISPATCH_PROC_EXIT,
+        dispatch_get_global_queue(QOS_CLASS_UTILITY, 0));
+    dispatch_source_set_event_handler(g_parentWatcher, ^{
+      _exit(0);
+    });
+    dispatch_resume(g_parentWatcher);
+    if (getppid() != parent) {
+        _exit(0);
+    }
+}
+
 __attribute__((constructor)) static void init() {
     g_runLoop = CFRunLoopGetCurrent();
     signal(SIGINT, handleSignal);
     signal(SIGTERM, handleSignal);
+    watchParent();
 }
 __attribute__((destructor)) static void teardown() { _adapter_stream_cancel(); }
 
