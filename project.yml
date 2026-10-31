@@ -1,0 +1,115 @@
+name: SmollNotch
+options:
+  bundleIdPrefix: com.iamginsley
+  deploymentTarget:
+    macOS: "26.0"
+  developmentLanguage: de
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+configFiles:
+  Debug: Configs/Project.xcconfig
+  Release: Configs/Project.xcconfig
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+    ENABLE_HARDENED_RUNTIME: YES
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  SmollNotch:
+    type: application
+    platform: macOS
+    sources:
+      - path: SmollNotch
+      # Loaded at runtime by /usr/bin/perl, see NowPlayingService.
+      - path: Vendor/MediaRemoteAdapter/bin/mediaremote-adapter.pl
+        buildPhase: resources
+    dependencies:
+      # Bundled for the adapter script only; the app itself must not link it.
+      - target: MediaRemoteAdapter
+        embed: true
+        link: false
+    entitlements:
+      path: SmollNotch/Resources/SmollNotch.entitlements
+      properties:
+        # No sandbox: the app launches /usr/bin/perl to read MediaRemote (not possible from the sandbox).
+        com.apple.security.app-sandbox: false
+    info:
+      path: SmollNotch/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Smoll Notch
+        CFBundleDevelopmentRegion: de
+        CFBundleLocalizations: [de]
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        LSApplicationCategoryType: public.app-category.music
+        LSUIElement: true
+        NSHumanReadableCopyright: © 2026 Dominik Gintsberger
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.iamginsley.smollnotch
+        PRODUCT_NAME: SmollNotch
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_PREVIEWS: YES
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks"
+
+  MediaRemoteAdapter:
+    type: framework
+    platform: macOS
+    sources:
+      - path: Vendor/MediaRemoteAdapter/src
+        excludes:
+          - "test/**"
+      - path: Vendor/MediaRemoteAdapter/include
+        headerVisibility: public
+    dependencies:
+      - sdk: AppKit.framework
+      - sdk: UniformTypeIdentifiers.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.iamginsley.smollnotch.MediaRemoteAdapter
+        PRODUCT_NAME: MediaRemoteAdapter
+        GENERATE_INFOPLIST_FILE: YES
+        CLANG_ENABLE_OBJC_ARC: YES
+        # The Perl script resolves the adapter's C functions by name.
+        GCC_SYMBOLS_PRIVATE_EXTERN: NO
+        GCC_INLINES_ARE_PRIVATE_EXTERN: NO
+        HEADER_SEARCH_PATHS: "$(SRCROOT)/Vendor/MediaRemoteAdapter/src $(SRCROOT)/Vendor/MediaRemoteAdapter/include"
+        GCC_WARN_INHIBIT_ALL_WARNINGS: YES
+        SKIP_INSTALL: YES
+        DEFINES_MODULE: NO
+
+  SmollNotchTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: SmollNotchTests
+    dependencies:
+      - target: SmollNotch
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.iamginsley.smollnotch.tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/SmollNotch.app/Contents/MacOS/SmollNotch"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+
+schemes:
+  SmollNotch:
+    build:
+      targets:
+        SmollNotch: all
+        SmollNotchTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - SmollNotchTests

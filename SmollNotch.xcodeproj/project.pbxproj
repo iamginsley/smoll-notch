@@ -1,0 +1,895 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02896FDA2FE74E0AC284D532 /* NotchWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D894411332352312EDF20229 /* NotchWindowController.swift */; };
+		168C92635CDA4A11FC1CC43B /* mediaremote-adapter.pl in Resources */ = {isa = PBXBuildFile; fileRef = C503A2DB9CAAD0829AFFA9B9 /* mediaremote-adapter.pl */; };
+		1BD386BE544866B5DF001D2A /* shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E36A264F4E5454A788DD6FF /* shuffle.m */; };
+		1D7FD17C72E4103A783EF23B /* get.h in Headers */ = {isa = PBXBuildFile; fileRef = 62799DC6CD2784AAC0CE267A /* get.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		239DB53A537DF60FCFADE6AD /* NotchShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904728BED3772114BB08D54D /* NotchShape.swift */; };
+		27B1B3B4A45555A376622794 /* NowPlayingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC5CD059E278A074AE7FC0 /* NowPlayingService.swift */; };
+		2C21A548E8155EB9FEBE63CD /* now_playing.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D50ED951C5E6D9CFA58B59 /* now_playing.m */; };
+		31CFD56DC3226127FB3FF02B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A355CA7164771B5165FCB7 /* AppKit.framework */; };
+		373339EEF9ED3AC034A45F1C /* MediaRemote.h in Headers */ = {isa = PBXBuildFile; fileRef = D54D6B9EE18AE94F59D67958 /* MediaRemote.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3994E5F64B4AFEC52ED7DB1C /* env.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA3B5CBB9B95923B064BB0 /* env.m */; };
+		3B427294CABE87DF361A6D3E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252698CABC421E84D793C23A /* Theme.swift */; };
+		417FD6E5C13B0018AAA8E330 /* SnapshotRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533E5D274C3232CE7CD4DDD /* SnapshotRender.swift */; };
+		41D0E3E2B3C372CE0E57A913 /* globals.h in Headers */ = {isa = PBXBuildFile; fileRef = 550EC9A814ADDFED4391F63D /* globals.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4313C337383765A863429DA3 /* DemoNowPlayingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11ABA92BD13350040837F2A /* DemoNowPlayingSource.swift */; };
+		4604C91BA2D1FE52D8E1D20B /* MediaRemoteAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = A4262C9F8D2C2BC2176A83F6 /* MediaRemoteAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6599E9EA149927F09E302037 /* stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5321EBA4DF0011B028F57C70 /* stream.m */; };
+		65B7CDD0000015D631AEC1A4 /* SmollNotchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5084D58836FE5F3520C28 /* SmollNotchApp.swift */; };
+		66ED5574679791AF46432BE6 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8573048AF07C68AE88693 /* SettingsViewModel.swift */; };
+		6C3A75C5AEDF38B92FB10714 /* helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D83F278B495C7AD81B1104 /* helpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		701730B8C88E2943000B6218 /* env.h in Headers */ = {isa = PBXBuildFile; fileRef = AE33772E94B9A3046274ED78 /* env.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71F9357649F8014357F1BB13 /* helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B8AFD5A02C6815ACCC4271 /* helpers.m */; };
+		7246B41EE2B00352EDBF1732 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926281A4DC05298B0797827F /* SettingsView.swift */; };
+		7B126E28B76423928605328F /* NowPlayingStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCFCD6797B4811A377BD35 /* NowPlayingStream.swift */; };
+		7E8D1725F57D04A76B61F0F3 /* Debounce.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3E2DCD5229FAA7456BA1 /* Debounce.m */; };
+		82A9149811C6E62FBDE9B4B7 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = A396CA8ECCE041AFCE02C8D6 /* test.m */; };
+		84A80BB8DA792112680E5E80 /* speed.m in Sources */ = {isa = PBXBuildFile; fileRef = 262FD34EDF2D7BB362BB4FA4 /* speed.m */; };
+		88991D2FB3CF89ECC4A0C5D0 /* NowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930D93E12CBF6B4FD8CB637 /* NowPlaying.swift */; };
+		8CC3A46600B3CF49F8FA2C27 /* NotchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F801504216EF85A1173BA047 /* NotchViewModel.swift */; };
+		8F9928E7CFA91E38FBB204F2 /* now_playing.h in Headers */ = {isa = PBXBuildFile; fileRef = 12E1794DFF2B9B7E4263E55F /* now_playing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A7A11EAEFEDA3440C857278 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0DB4A4C5462656446749B724 /* PrivacyInfo.xcprivacy */; };
+		A289E5538AD6FA5F4798FCD3 /* keys.h in Headers */ = {isa = PBXBuildFile; fileRef = 50288650E87F285F92BE49DB /* keys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A84D96C7DADF2F1965321644 /* MediaRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA654FB3405A7DD90C0AD56 /* MediaRemote.m */; };
+		B30539E155EFD644A6C768DD /* seek.m in Sources */ = {isa = PBXBuildFile; fileRef = D94FFBCF4684C905BD6E30C6 /* seek.m */; };
+		BF0731998ACD1F77ED6B9E6B /* MediaRemoteAdapter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6646F9807F19CCA9E46C2B55 /* MediaRemoteAdapter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CACEB4F1F509E798677B8E57 /* repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F96494B3CB4C804744E370 /* repeat.m */; };
+		DC3374070B7D335E19EFEEE3 /* keys.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D94B9C3A3D78C291737609E /* keys.m */; };
+		DE084176453F20DD7C6CF159 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CF4E1339231E48E5A89861 /* UniformTypeIdentifiers.framework */; };
+		E96DA0D645DC30DB1EFC14F2 /* globals.m in Sources */ = {isa = PBXBuildFile; fileRef = B82EBF90CBF52BDE2CC97B22 /* globals.m */; };
+		E9AA703D412CC43BE041F3AB /* NotchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6232EF51353876B6E3CCE559 /* NotchView.swift */; };
+		EE295DA533B64A9C7C395531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E1F18D7753C30226B41026 /* Assets.xcassets */; };
+		EEFA5F12F3A5EA6013570B97 /* NowPlayingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549133B3C62A349E89F8EABD /* NowPlayingTests.swift */; };
+		F193DA0BE9D260B3C0F03DCA /* Debounce.h in Headers */ = {isa = PBXBuildFile; fileRef = C42E5FD8169EAD8B4E7C1FBC /* Debounce.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAC19A4794A61A284422C6B4 /* get.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9FC76020CE56086D1BEC69 /* get.m */; };
+		FBA124AD8BF74A1D1E43C563 /* send.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E6E231FE4E481E3FADDDA6 /* send.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		865C616D4DABFFEEDC5A2C99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 842CC5728432E84B79DA04C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 255D5E1802ACA904D36DAD85;
+			remoteInfo = MediaRemoteAdapter;
+		};
+		A58B1BF27328112CE32BC84F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 842CC5728432E84B79DA04C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F170BCCCF734590A3480700B;
+			remoteInfo = SmollNotch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B7C522A8B62ADDC170613B81 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF0731998ACD1F77ED6B9E6B /* MediaRemoteAdapter.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		05D50ED951C5E6D9CFA58B59 /* now_playing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = now_playing.m; sourceTree = "<group>"; };
+		0BE8573048AF07C68AE88693 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		0DB4A4C5462656446749B724 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		12E1794DFF2B9B7E4263E55F /* now_playing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = now_playing.h; sourceTree = "<group>"; };
+		1E36A264F4E5454A788DD6FF /* shuffle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shuffle.m; sourceTree = "<group>"; };
+		252698CABC421E84D793C23A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		262FD34EDF2D7BB362BB4FA4 /* speed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = speed.m; sourceTree = "<group>"; };
+		27CF4E1339231E48E5A89861 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
+		32A355CA7164771B5165FCB7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		42E1F18D7753C30226B41026 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45CE3E2DCD5229FAA7456BA1 /* Debounce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Debounce.m; sourceTree = "<group>"; };
+		50288650E87F285F92BE49DB /* keys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = keys.h; sourceTree = "<group>"; };
+		5321EBA4DF0011B028F57C70 /* stream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = stream.m; sourceTree = "<group>"; };
+		549133B3C62A349E89F8EABD /* NowPlayingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingTests.swift; sourceTree = "<group>"; };
+		550EC9A814ADDFED4391F63D /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
+		58959B38E6450F892FDDAAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		61B8AFD5A02C6815ACCC4271 /* helpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = helpers.m; sourceTree = "<group>"; };
+		6232EF51353876B6E3CCE559 /* NotchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchView.swift; sourceTree = "<group>"; };
+		62799DC6CD2784AAC0CE267A /* get.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = get.h; sourceTree = "<group>"; };
+		62CCFCD6797B4811A377BD35 /* NowPlayingStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingStream.swift; sourceTree = "<group>"; };
+		6646F9807F19CCA9E46C2B55 /* MediaRemoteAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaRemoteAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CA654FB3405A7DD90C0AD56 /* MediaRemote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaRemote.m; sourceTree = "<group>"; };
+		82A5084D58836FE5F3520C28 /* SmollNotchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmollNotchApp.swift; sourceTree = "<group>"; };
+		904728BED3772114BB08D54D /* NotchShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchShape.swift; sourceTree = "<group>"; };
+		926281A4DC05298B0797827F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9533E5D274C3232CE7CD4DDD /* SnapshotRender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotRender.swift; sourceTree = "<group>"; };
+		97A962132805A5D439194F4A /* SmollNotchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmollNotchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D94B9C3A3D78C291737609E /* keys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = keys.m; sourceTree = "<group>"; };
+		A396CA8ECCE041AFCE02C8D6 /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
+		A4262C9F8D2C2BC2176A83F6 /* MediaRemoteAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRemoteAdapter.h; sourceTree = "<group>"; };
+		AC9FC76020CE56086D1BEC69 /* get.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = get.m; sourceTree = "<group>"; };
+		AE33772E94B9A3046274ED78 /* env.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = env.h; sourceTree = "<group>"; };
+		B1F96494B3CB4C804744E370 /* repeat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = repeat.m; sourceTree = "<group>"; };
+		B82EBF90CBF52BDE2CC97B22 /* globals.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = globals.m; sourceTree = "<group>"; };
+		C42E5FD8169EAD8B4E7C1FBC /* Debounce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Debounce.h; sourceTree = "<group>"; };
+		C503A2DB9CAAD0829AFFA9B9 /* mediaremote-adapter.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = "mediaremote-adapter.pl"; sourceTree = "<group>"; };
+		C9F4051AEFAD7F1E708098DD /* SmollNotch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmollNotch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1AB1085A3BB4B6FA84461F7 /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		D1D83F278B495C7AD81B1104 /* helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
+		D54D6B9EE18AE94F59D67958 /* MediaRemote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRemote.h; sourceTree = "<group>"; };
+		D894411332352312EDF20229 /* NotchWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchWindowController.swift; sourceTree = "<group>"; };
+		D930D93E12CBF6B4FD8CB637 /* NowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying.swift; sourceTree = "<group>"; };
+		D94FFBCF4684C905BD6E30C6 /* seek.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = seek.m; sourceTree = "<group>"; };
+		DAEA3B5CBB9B95923B064BB0 /* env.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = env.m; sourceTree = "<group>"; };
+		F11ABA92BD13350040837F2A /* DemoNowPlayingSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoNowPlayingSource.swift; sourceTree = "<group>"; };
+		F4FC5CD059E278A074AE7FC0 /* NowPlayingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingService.swift; sourceTree = "<group>"; };
+		F5E6E231FE4E481E3FADDDA6 /* send.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = send.m; sourceTree = "<group>"; };
+		F801504216EF85A1173BA047 /* NotchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchViewModel.swift; sourceTree = "<group>"; };
+		FCDF5FF15D1DFF5F5C0B6600 /* SmollNotch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmollNotch.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35A84DEE8E832F898FA5DEF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31CFD56DC3226127FB3FF02B /* AppKit.framework in Frameworks */,
+				DE084176453F20DD7C6CF159 /* UniformTypeIdentifiers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06A84FEA4E87650801469096 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6646F9807F19CCA9E46C2B55 /* MediaRemoteAdapter.framework */,
+				C9F4051AEFAD7F1E708098DD /* SmollNotch.app */,
+				97A962132805A5D439194F4A /* SmollNotchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C09512081EE1BA9D7008133 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				926281A4DC05298B0797827F /* SettingsView.swift */,
+				0BE8573048AF07C68AE88693 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1D0D06A88B6974FFE20EA49E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32A355CA7164771B5165FCB7 /* AppKit.framework */,
+				27CF4E1339231E48E5A89861 /* UniformTypeIdentifiers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AA559AF5C2BCE4C6EC80061 = {
+			isa = PBXGroup;
+			children = (
+				AF1FC7C7932826E66DE2334A /* Configs */,
+				B57D2BF60F956009F1635193 /* SmollNotch */,
+				C7AFCBD62933E315D80767C0 /* SmollNotchTests */,
+				C34362719B6B3601C8A9B2A7 /* Vendor */,
+				1D0D06A88B6974FFE20EA49E /* Frameworks */,
+				06A84FEA4E87650801469096 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2B07558DF5A0A25640E3315D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F4FC5CD059E278A074AE7FC0 /* NowPlayingService.swift */,
+				62CCFCD6797B4811A377BD35 /* NowPlayingStream.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		42F50BE41CF1F374757B4C35 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D930D93E12CBF6B4FD8CB637 /* NowPlaying.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4628B13F773500C64B98AE85 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				C42E5FD8169EAD8B4E7C1FBC /* Debounce.h */,
+				45CE3E2DCD5229FAA7456BA1 /* Debounce.m */,
+				D1D83F278B495C7AD81B1104 /* helpers.h */,
+				61B8AFD5A02C6815ACCC4271 /* helpers.m */,
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
+		5000D346E5DA1160FD50B0E2 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				252698CABC421E84D793C23A /* Theme.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		569B1C09983DD5EE6011CD64 /* adapter */ = {
+			isa = PBXGroup;
+			children = (
+				AE33772E94B9A3046274ED78 /* env.h */,
+				DAEA3B5CBB9B95923B064BB0 /* env.m */,
+				62799DC6CD2784AAC0CE267A /* get.h */,
+				AC9FC76020CE56086D1BEC69 /* get.m */,
+				550EC9A814ADDFED4391F63D /* globals.h */,
+				B82EBF90CBF52BDE2CC97B22 /* globals.m */,
+				50288650E87F285F92BE49DB /* keys.h */,
+				9D94B9C3A3D78C291737609E /* keys.m */,
+				12E1794DFF2B9B7E4263E55F /* now_playing.h */,
+				05D50ED951C5E6D9CFA58B59 /* now_playing.m */,
+				B1F96494B3CB4C804744E370 /* repeat.m */,
+				D94FFBCF4684C905BD6E30C6 /* seek.m */,
+				F5E6E231FE4E481E3FADDDA6 /* send.m */,
+				1E36A264F4E5454A788DD6FF /* shuffle.m */,
+				262FD34EDF2D7BB362BB4FA4 /* speed.m */,
+				5321EBA4DF0011B028F57C70 /* stream.m */,
+				A396CA8ECCE041AFCE02C8D6 /* test.m */,
+			);
+			path = adapter;
+			sourceTree = "<group>";
+		};
+		5B079C91C1A979DD38422553 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				569B1C09983DD5EE6011CD64 /* adapter */,
+				E5B2BEC1498BF3D9209BCFA1 /* private */,
+				4628B13F773500C64B98AE85 /* utility */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		796F7137C3F86F4F594917DB /* MediaRemoteAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				B6403257FFC41E9C6BDD19F0 /* bin */,
+				DF2C3CFA4A2A719C4137CD84 /* include */,
+				5B079C91C1A979DD38422553 /* src */,
+			);
+			path = MediaRemoteAdapter;
+			sourceTree = "<group>";
+		};
+		AF1FC7C7932826E66DE2334A /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				D1AB1085A3BB4B6FA84461F7 /* Project.xcconfig */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		B57D2BF60F956009F1635193 /* SmollNotch */ = {
+			isa = PBXGroup;
+			children = (
+				CDF979E304699EA007F42B82 /* App */,
+				C59D0B8DE5E48EEEA3DCBECA /* Core */,
+				5000D346E5DA1160FD50B0E2 /* Design */,
+				DEA955CA8A74ADBC502E427F /* Features */,
+				C51696F89F7BC1748FFC1FF3 /* Resources */,
+			);
+			path = SmollNotch;
+			sourceTree = "<group>";
+		};
+		B6403257FFC41E9C6BDD19F0 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				C503A2DB9CAAD0829AFFA9B9 /* mediaremote-adapter.pl */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		C34362719B6B3601C8A9B2A7 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				796F7137C3F86F4F594917DB /* MediaRemoteAdapter */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		C3A522E59F66F3D4801D8700 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				F11ABA92BD13350040837F2A /* DemoNowPlayingSource.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		C51696F89F7BC1748FFC1FF3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				42E1F18D7753C30226B41026 /* Assets.xcassets */,
+				58959B38E6450F892FDDAAFE /* Info.plist */,
+				0DB4A4C5462656446749B724 /* PrivacyInfo.xcprivacy */,
+				FCDF5FF15D1DFF5F5C0B6600 /* SmollNotch.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C59D0B8DE5E48EEEA3DCBECA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C3A522E59F66F3D4801D8700 /* Demo */,
+				42F50BE41CF1F374757B4C35 /* Models */,
+				2B07558DF5A0A25640E3315D /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C7AFCBD62933E315D80767C0 /* SmollNotchTests */ = {
+			isa = PBXGroup;
+			children = (
+				549133B3C62A349E89F8EABD /* NowPlayingTests.swift */,
+				9533E5D274C3232CE7CD4DDD /* SnapshotRender.swift */,
+			);
+			path = SmollNotchTests;
+			sourceTree = "<group>";
+		};
+		CDF979E304699EA007F42B82 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				82A5084D58836FE5F3520C28 /* SmollNotchApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DEA955CA8A74ADBC502E427F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				FFD9CE89D1FBE93FBBDF9491 /* Notch */,
+				1C09512081EE1BA9D7008133 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		DF2C3CFA4A2A719C4137CD84 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A4262C9F8D2C2BC2176A83F6 /* MediaRemoteAdapter.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		E5B2BEC1498BF3D9209BCFA1 /* private */ = {
+			isa = PBXGroup;
+			children = (
+				D54D6B9EE18AE94F59D67958 /* MediaRemote.h */,
+				7CA654FB3405A7DD90C0AD56 /* MediaRemote.m */,
+			);
+			path = private;
+			sourceTree = "<group>";
+		};
+		FFD9CE89D1FBE93FBBDF9491 /* Notch */ = {
+			isa = PBXGroup;
+			children = (
+				904728BED3772114BB08D54D /* NotchShape.swift */,
+				6232EF51353876B6E3CCE559 /* NotchView.swift */,
+				F801504216EF85A1173BA047 /* NotchViewModel.swift */,
+				D894411332352312EDF20229 /* NotchWindowController.swift */,
+			);
+			path = Notch;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7680D0B49C068C05508A7249 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F193DA0BE9D260B3C0F03DCA /* Debounce.h in Headers */,
+				373339EEF9ED3AC034A45F1C /* MediaRemote.h in Headers */,
+				4604C91BA2D1FE52D8E1D20B /* MediaRemoteAdapter.h in Headers */,
+				701730B8C88E2943000B6218 /* env.h in Headers */,
+				1D7FD17C72E4103A783EF23B /* get.h in Headers */,
+				41D0E3E2B3C372CE0E57A913 /* globals.h in Headers */,
+				6C3A75C5AEDF38B92FB10714 /* helpers.h in Headers */,
+				A289E5538AD6FA5F4798FCD3 /* keys.h in Headers */,
+				8F9928E7CFA91E38FBB204F2 /* now_playing.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		238910D42FB910AF04DE50FB /* SmollNotchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57A378F3CCC440F077BEB578 /* Build configuration list for PBXNativeTarget "SmollNotchTests" */;
+			buildPhases = (
+				BA4C689BCB73416D396F2422 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C790741BCBA10213F56FA18 /* PBXTargetDependency */,
+			);
+			name = SmollNotchTests;
+			packageProductDependencies = (
+			);
+			productName = SmollNotchTests;
+			productReference = 97A962132805A5D439194F4A /* SmollNotchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		255D5E1802ACA904D36DAD85 /* MediaRemoteAdapter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC720F64BD0650533F275203 /* Build configuration list for PBXNativeTarget "MediaRemoteAdapter" */;
+			buildPhases = (
+				7680D0B49C068C05508A7249 /* Headers */,
+				34A4668D0403EDAF17AA41C4 /* Sources */,
+				35A84DEE8E832F898FA5DEF8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MediaRemoteAdapter;
+			packageProductDependencies = (
+			);
+			productName = MediaRemoteAdapter;
+			productReference = 6646F9807F19CCA9E46C2B55 /* MediaRemoteAdapter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F170BCCCF734590A3480700B /* SmollNotch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B442B975D2453E249719E9C /* Build configuration list for PBXNativeTarget "SmollNotch" */;
+			buildPhases = (
+				D085D29E02AA9F67EA8EA087 /* Sources */,
+				D1A0C112DFBA62D36C42F3B8 /* Resources */,
+				B7C522A8B62ADDC170613B81 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				934F9DA89481FD188FDAC572 /* PBXTargetDependency */,
+			);
+			name = SmollNotch;
+			packageProductDependencies = (
+			);
+			productName = SmollNotch;
+			productReference = C9F4051AEFAD7F1E708098DD /* SmollNotch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		842CC5728432E84B79DA04C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					238910D42FB910AF04DE50FB = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					255D5E1802ACA904D36DAD85 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					F170BCCCF734590A3480700B = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A6066C741EFEA9756A3962AE /* Build configuration list for PBXProject "SmollNotch" */;
+			developmentRegion = de;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				de,
+			);
+			mainGroup = 2AA559AF5C2BCE4C6EC80061;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 06A84FEA4E87650801469096 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F170BCCCF734590A3480700B /* SmollNotch */,
+				255D5E1802ACA904D36DAD85 /* MediaRemoteAdapter */,
+				238910D42FB910AF04DE50FB /* SmollNotchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D1A0C112DFBA62D36C42F3B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE295DA533B64A9C7C395531 /* Assets.xcassets in Resources */,
+				9A7A11EAEFEDA3440C857278 /* PrivacyInfo.xcprivacy in Resources */,
+				168C92635CDA4A11FC1CC43B /* mediaremote-adapter.pl in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		34A4668D0403EDAF17AA41C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E8D1725F57D04A76B61F0F3 /* Debounce.m in Sources */,
+				A84D96C7DADF2F1965321644 /* MediaRemote.m in Sources */,
+				3994E5F64B4AFEC52ED7DB1C /* env.m in Sources */,
+				FAC19A4794A61A284422C6B4 /* get.m in Sources */,
+				E96DA0D645DC30DB1EFC14F2 /* globals.m in Sources */,
+				71F9357649F8014357F1BB13 /* helpers.m in Sources */,
+				DC3374070B7D335E19EFEEE3 /* keys.m in Sources */,
+				2C21A548E8155EB9FEBE63CD /* now_playing.m in Sources */,
+				CACEB4F1F509E798677B8E57 /* repeat.m in Sources */,
+				B30539E155EFD644A6C768DD /* seek.m in Sources */,
+				FBA124AD8BF74A1D1E43C563 /* send.m in Sources */,
+				1BD386BE544866B5DF001D2A /* shuffle.m in Sources */,
+				84A80BB8DA792112680E5E80 /* speed.m in Sources */,
+				6599E9EA149927F09E302037 /* stream.m in Sources */,
+				82A9149811C6E62FBDE9B4B7 /* test.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA4C689BCB73416D396F2422 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEFA5F12F3A5EA6013570B97 /* NowPlayingTests.swift in Sources */,
+				417FD6E5C13B0018AAA8E330 /* SnapshotRender.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D085D29E02AA9F67EA8EA087 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4313C337383765A863429DA3 /* DemoNowPlayingSource.swift in Sources */,
+				239DB53A537DF60FCFADE6AD /* NotchShape.swift in Sources */,
+				E9AA703D412CC43BE041F3AB /* NotchView.swift in Sources */,
+				8CC3A46600B3CF49F8FA2C27 /* NotchViewModel.swift in Sources */,
+				02896FDA2FE74E0AC284D532 /* NotchWindowController.swift in Sources */,
+				88991D2FB3CF89ECC4A0C5D0 /* NowPlaying.swift in Sources */,
+				27B1B3B4A45555A376622794 /* NowPlayingService.swift in Sources */,
+				7B126E28B76423928605328F /* NowPlayingStream.swift in Sources */,
+				7246B41EE2B00352EDBF1732 /* SettingsView.swift in Sources */,
+				66ED5574679791AF46432BE6 /* SettingsViewModel.swift in Sources */,
+				65B7CDD0000015D631AEC1A4 /* SmollNotchApp.swift in Sources */,
+				3B427294CABE87DF361A6D3E /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C790741BCBA10213F56FA18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F170BCCCF734590A3480700B /* SmollNotch */;
+			targetProxy = A58B1BF27328112CE32BC84F /* PBXContainerItemProxy */;
+		};
+		934F9DA89481FD188FDAC572 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 255D5E1802ACA904D36DAD85 /* MediaRemoteAdapter */;
+			targetProxy = 865C616D4DABFFEEDC5A2C99 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5A98D1D34F1BC991F07E1F08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamginsley.smollnotch.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmollNotch.app/Contents/MacOS/SmollNotch";
+			};
+			name = Debug;
+		};
+		5EEB59825394DC4E327830AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Vendor/MediaRemoteAdapter/src $(SRCROOT)/Vendor/MediaRemoteAdapter/include";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamginsley.smollnotch.MediaRemoteAdapter;
+				PRODUCT_NAME = MediaRemoteAdapter;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		7530BDC73977782AAF04E4F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmollNotch/Resources/SmollNotch.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SmollNotch/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamginsley.smollnotch;
+				PRODUCT_NAME = SmollNotch;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		961AD919BDD7E59C7F032F41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamginsley.smollnotch.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmollNotch.app/Contents/MacOS/SmollNotch";
+			};
+			name = Release;
+		};
+		A2ECA3AFF6A0FC59301C2B56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1AB1085A3BB4B6FA84461F7 /* Project.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		AC62CBB6A38D077581105232 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmollNotch/Resources/SmollNotch.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SmollNotch/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamginsley.smollnotch;
+				PRODUCT_NAME = SmollNotch;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B905E9F2EFF777549A8813C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Vendor/MediaRemoteAdapter/src $(SRCROOT)/Vendor/MediaRemoteAdapter/include";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamginsley.smollnotch.MediaRemoteAdapter;
+				PRODUCT_NAME = MediaRemoteAdapter;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		DC966EA1125A979DE872ED1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1AB1085A3BB4B6FA84461F7 /* Project.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57A378F3CCC440F077BEB578 /* Build configuration list for PBXNativeTarget "SmollNotchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A98D1D34F1BC991F07E1F08 /* Debug */,
+				961AD919BDD7E59C7F032F41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9B442B975D2453E249719E9C /* Build configuration list for PBXNativeTarget "SmollNotch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC62CBB6A38D077581105232 /* Debug */,
+				7530BDC73977782AAF04E4F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A6066C741EFEA9756A3962AE /* Build configuration list for PBXProject "SmollNotch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC966EA1125A979DE872ED1C /* Debug */,
+				A2ECA3AFF6A0FC59301C2B56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BC720F64BD0650533F275203 /* Build configuration list for PBXNativeTarget "MediaRemoteAdapter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EEB59825394DC4E327830AB /* Debug */,
+				B905E9F2EFF777549A8813C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 842CC5728432E84B79DA04C3 /* Project object */;
+}
