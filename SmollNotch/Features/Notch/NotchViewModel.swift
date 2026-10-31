@@ -15,6 +15,10 @@ final class NotchViewModel {
 
     private(set) var nowPlaying: NowPlaying?
     private(set) var artwork: NSImage?
+    /// Changes with every new cover so the view can crossfade it.
+    private(set) var artworkID = 0
+    /// Icon of the app that plays, shown beside the notch when expanded.
+    private(set) var sourceIcon: NSImage?
     private(set) var tint: Color = .islandPrimary
     var isHovering = false {
         didSet { if isHovering != oldValue { updateMode() } }
@@ -44,20 +48,9 @@ final class NotchViewModel {
 
     // MARK: - Layout
 
-    /// Island size for the current mode. The window controller uses it for hit testing too.
-    var islandSize: CGSize {
-        switch mode {
-        case .hidden: notchSize
-        case .compact: CGSize(width: notchSize.width + 2 * compactWing, height: notchSize.height)
-        case .expanded: CGSize(width: max(notchSize.width + 220, 470), height: notchSize.height + 150)
-        }
-    }
-
-    /// Width of the artwork and equalizer "wings" beside the notch.
-    var compactWing: CGFloat { notchSize.height + 12 }
-
-    var cornerRadii: (top: CGFloat, bottom: CGFloat) {
-        mode == .expanded ? (14, 32) : (6, 14)
+    /// Frames for the current mode. The window controller uses `layout.size` for hit testing too.
+    var layout: NotchLayout {
+        NotchLayout(mode: mode, notchSize: notchSize, showsProgress: nowPlaying?.duration != nil)
     }
 
     // MARK: - Actions
@@ -87,8 +80,13 @@ final class NotchViewModel {
         let artworkChanged = state?.artworkData != nowPlaying?.artworkData
         // Players briefly report no artwork while switching tracks; keep the old cover until the new one arrives.
         let keepArtwork = state?.artworkData == nil && state?.title == nowPlaying?.title
+        if state?.sourceBundleIdentifier != nowPlaying?.sourceBundleIdentifier {
+            sourceIcon = state.flatMap { NSWorkspace.shared.urlForApplication(withBundleIdentifier: $0.sourceBundleIdentifier) }
+                .map { NSWorkspace.shared.icon(forFile: $0.path) }
+        }
         nowPlaying = state
         if artworkChanged, !keepArtwork {
+            artworkID += 1
             if let data = state?.artworkData {
                 artwork = NSImage(data: data)
                 tint = ArtworkTint.color(for: data) ?? .islandPrimary

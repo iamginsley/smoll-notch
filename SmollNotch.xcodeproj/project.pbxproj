@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02896FDA2FE74E0AC284D532 /* NotchWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D894411332352312EDF20229 /* NotchWindowController.swift */; };
 		168C92635CDA4A11FC1CC43B /* mediaremote-adapter.pl in Resources */ = {isa = PBXBuildFile; fileRef = C503A2DB9CAAD0829AFFA9B9 /* mediaremote-adapter.pl */; };
+		18A68864CD9EBC3B1C410AE4 /* NotchLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1500DF51C6FD17A0697275DD /* NotchLayout.swift */; };
 		1BD386BE544866B5DF001D2A /* shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E36A264F4E5454A788DD6FF /* shuffle.m */; };
 		1D7FD17C72E4103A783EF23B /* get.h in Headers */ = {isa = PBXBuildFile; fileRef = 62799DC6CD2784AAC0CE267A /* get.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		239DB53A537DF60FCFADE6AD /* NotchShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904728BED3772114BB08D54D /* NotchShape.swift */; };
@@ -44,6 +45,7 @@
 		BF0731998ACD1F77ED6B9E6B /* MediaRemoteAdapter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6646F9807F19CCA9E46C2B55 /* MediaRemoteAdapter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CACEB4F1F509E798677B8E57 /* repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F96494B3CB4C804744E370 /* repeat.m */; };
 		DC3374070B7D335E19EFEEE3 /* keys.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D94B9C3A3D78C291737609E /* keys.m */; };
+		DD432AEFA81627F24281433B /* NotchLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80820C7C367041879F08FACD /* NotchLayoutTests.swift */; };
 		DE084176453F20DD7C6CF159 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CF4E1339231E48E5A89861 /* UniformTypeIdentifiers.framework */; };
 		E96DA0D645DC30DB1EFC14F2 /* globals.m in Sources */ = {isa = PBXBuildFile; fileRef = B82EBF90CBF52BDE2CC97B22 /* globals.m */; };
 		E9AA703D412CC43BE041F3AB /* NotchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6232EF51353876B6E3CCE559 /* NotchView.swift */; };
@@ -90,6 +92,7 @@
 		0BE8573048AF07C68AE88693 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		0DB4A4C5462656446749B724 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		12E1794DFF2B9B7E4263E55F /* now_playing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = now_playing.h; sourceTree = "<group>"; };
+		1500DF51C6FD17A0697275DD /* NotchLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchLayout.swift; sourceTree = "<group>"; };
 		1E36A264F4E5454A788DD6FF /* shuffle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shuffle.m; sourceTree = "<group>"; };
 		252698CABC421E84D793C23A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		262FD34EDF2D7BB362BB4FA4 /* speed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = speed.m; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		62CCFCD6797B4811A377BD35 /* NowPlayingStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingStream.swift; sourceTree = "<group>"; };
 		6646F9807F19CCA9E46C2B55 /* MediaRemoteAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaRemoteAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA654FB3405A7DD90C0AD56 /* MediaRemote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaRemote.m; sourceTree = "<group>"; };
+		80820C7C367041879F08FACD /* NotchLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchLayoutTests.swift; sourceTree = "<group>"; };
 		82A5084D58836FE5F3520C28 /* SmollNotchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmollNotchApp.swift; sourceTree = "<group>"; };
 		904728BED3772114BB08D54D /* NotchShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchShape.swift; sourceTree = "<group>"; };
 		926281A4DC05298B0797827F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -340,6 +344,7 @@
 		C7AFCBD62933E315D80767C0 /* SmollNotchTests */ = {
 			isa = PBXGroup;
 			children = (
+				80820C7C367041879F08FACD /* NotchLayoutTests.swift */,
 				549133B3C62A349E89F8EABD /* NowPlayingTests.swift */,
 				9533E5D274C3232CE7CD4DDD /* SnapshotRender.swift */,
 			);
@@ -383,6 +388,7 @@
 		FFD9CE89D1FBE93FBBDF9491 /* Notch */ = {
 			isa = PBXGroup;
 			children = (
+				1500DF51C6FD17A0697275DD /* NotchLayout.swift */,
 				904728BED3772114BB08D54D /* NotchShape.swift */,
 				6232EF51353876B6E3CCE559 /* NotchView.swift */,
 				F801504216EF85A1173BA047 /* NotchViewModel.swift */,
@@ -555,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD432AEFA81627F24281433B /* NotchLayoutTests.swift in Sources */,
 				EEFA5F12F3A5EA6013570B97 /* NowPlayingTests.swift in Sources */,
 				417FD6E5C13B0018AAA8E330 /* SnapshotRender.swift in Sources */,
 			);
@@ -565,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4313C337383765A863429DA3 /* DemoNowPlayingSource.swift in Sources */,
+				18A68864CD9EBC3B1C410AE4 /* NotchLayout.swift in Sources */,
 				239DB53A537DF60FCFADE6AD /* NotchShape.swift in Sources */,
 				E9AA703D412CC43BE041F3AB /* NotchView.swift in Sources */,
 				8CC3A46600B3CF49F8FA2C27 /* NotchViewModel.swift in Sources */,

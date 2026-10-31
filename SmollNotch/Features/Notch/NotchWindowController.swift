@@ -30,6 +30,7 @@ final class NotchWindowController {
     private var monitors: [Any] = []
     private var screenObserver: NSObjectProtocol?
     private var collapseTask: Task<Void, Never>?
+    private var expandTask: Task<Void, Never>?
 
     private static let panelSize = CGSize(width: 680, height: 260)
 
@@ -88,7 +89,7 @@ final class NotchWindowController {
     /// The island's rectangle in screen coordinates.
     private var islandFrame: CGRect {
         let panelFrame = panel.frame
-        let island = model.islandSize
+        let island = model.layout.size
         return CGRect(x: panelFrame.midX - island.width / 2, y: panelFrame.maxY - island.height,
                       width: island.width, height: island.height)
     }
@@ -99,8 +100,20 @@ final class NotchWindowController {
         if inside {
             collapseTask?.cancel()
             collapseTask = nil
-            if !model.isHovering { model.isHovering = true }
-        } else if model.isHovering, collapseTask == nil {
+            if !model.isHovering, expandTask == nil {
+                // Hover intent: passing through on the way to the menu bar should not open the island.
+                expandTask = Task { [weak self] in
+                    try? await Task.sleep(for: .milliseconds(90))
+                    guard !Task.isCancelled, let self else { return }
+                    self.model.isHovering = true
+                    self.expandTask = nil
+                    self.updateMouseHandling()
+                }
+            }
+        } else if !model.isHovering {
+            expandTask?.cancel()
+            expandTask = nil
+        } else if collapseTask == nil {
             // A short grace period so a quick wobble past the edge does not snap it shut.
             collapseTask = Task { [weak self] in
                 try? await Task.sleep(for: .milliseconds(250))
