@@ -41,3 +41,7 @@ open SmollNotch.xcodeproj
 Debug launch flags: `-SmollNotchDemo` (sample tracks), `-SmollNotchExpanded` (always expanded).
 
 Render the island to PNGs without a screen: `SNAPSHOT_DIR=/some/dir xcodebuild test -scheme SmollNotch -only-testing:SmollNotchTests/SnapshotRender`.
+
+## Release
+
+Developer ID signed and notarized DMG via `scripts/release.sh`. Setup and checklist: [docs/release.md](docs/release.md).
