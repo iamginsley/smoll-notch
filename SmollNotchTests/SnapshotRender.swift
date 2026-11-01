@@ -8,6 +8,8 @@ struct SnapshotRender {
     @Test(.enabled(if: ProcessInfo.processInfo.environment["SNAPSHOT_DIR"] != nil))
     func render() async throws {
         let dir = ProcessInfo.processInfo.environment["SNAPSHOT_DIR"]!
+        // SNAPSHOT_CLEAR=1 renders on a transparent background, e.g. for the website.
+        let background: Color = ProcessInfo.processInfo.environment["SNAPSHOT_CLEAR"] == nil ? .gray : .clear
         // Second demo track has a 16:9 thumbnail, like YouTube.
         let cases = [
             ("expanded", true, false, true), ("expanded-wide", true, true, true), ("compact", false, false, true),
@@ -20,7 +22,7 @@ struct SnapshotRender {
             model.start()
             if wide { model.next() }
             // Render through a real hosting view so the result matches what the panel draws.
-            let view = NSHostingView(rootView: NotchView(island: island).frame(width: 680, height: 260).background(Color.gray))
+            let view = NSHostingView(rootView: NotchView(island: island).frame(width: 680, height: 260).background(background))
             view.frame = CGRect(x: 0, y: 0, width: 680, height: 260)
             let window = NSWindow(contentRect: view.frame, styleMask: .borderless, backing: .buffered, defer: false)
             window.contentView = view

@@ -31,14 +31,15 @@ GitHub Release.
    ```
    It generates the project, runs the tests, archives a universal Release build, exports it with
    Developer ID, builds the DMG (with a link to Programme), notarizes, staples and checks Gatekeeper.
-   The result is `build/release/SmollNotch-<version>.dmg`.
+   The result is `build/release/SmollNotch-<version>.dmg` plus a copy named `SmollNotch.dmg`. Upload the
+   copy: the website downloads `releases/latest/download/SmollNotch.dmg`.
 3. Smoke test on this Mac: open the DMG, drag the app to Programme, start it, play something in
    Music, in Safari (YouTube) and in Spotify. Hover, controls and seeking work, the settings open
    from the menu bar.
 4. Commit the version bump, tag and publish:
    ```
    git tag v<version> && git push origin v<version>
-   gh release create v<version> build/release/SmollNotch-<version>.dmg --title "Smoll Notch <version>" --notes "..."
+   gh release create v<version> build/release/SmollNotch.dmg --title "Smoll Notch <version>" --notes "..."
    ```
 
 `scripts/release.sh --skip-notarize` skips notarization for a quick local check. That DMG only opens

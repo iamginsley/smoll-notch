@@ -57,4 +57,6 @@ xcrun notarytool submit $DMG --keychain-profile "$NOTARY_PROFILE" --wait
 xcrun stapler staple $DMG
 spctl --assess --type open --context context:primary-signature --verbose $DMG
 
-echo "✓ $DMG"
+# Stable name for https://github.com/iamginsley/smoll-notch/releases/latest/download/SmollNotch.dmg
+cp $DMG $OUT/SmollNotch.dmg
+echo "✓ $DMG (upload $OUT/SmollNotch.dmg to the release, the website links to it)"
