@@ -130,7 +130,9 @@ private struct ArtworkView: View {
     let cornerRadius: CGFloat
 
     var body: some View {
-        ZStack {
+        // Color.clear takes exactly the offered square, so wide covers (YouTube thumbnails) are
+        // cropped to it instead of growing the view past the island edge.
+        Color.clear.overlay {
             Group {
                 if let image {
                     Image(nsImage: image).resizable().scaledToFill()
@@ -147,6 +149,7 @@ private struct ArtworkView: View {
             .transition(.opacity)
         }
         .animation(.smooth(duration: 0.4), value: id)
+        .clipped()
         .clipShape(.rect(cornerRadius: cornerRadius, style: .continuous))
     }
 }
