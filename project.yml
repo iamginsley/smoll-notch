@@ -57,7 +57,10 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.iamginsley.smollnotch
-        PRODUCT_NAME: SmollNotch
+        # "Smoll Notch.app" in Finder and Spotlight; binary and Swift module keep the name without a space.
+        PRODUCT_NAME: Smoll Notch
+        EXECUTABLE_NAME: SmollNotch
+        PRODUCT_MODULE_NAME: SmollNotch
         MARKETING_VERSION: "1.0.0"
         CURRENT_PROJECT_VERSION: "1"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
@@ -101,7 +104,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.iamginsley.smollnotch.tests
         GENERATE_INFOPLIST_FILE: YES
-        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/SmollNotch.app/Contents/MacOS/SmollNotch"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Smoll Notch.app/Contents/MacOS/SmollNotch"
         BUNDLE_LOADER: "$(TEST_HOST)"
 
 schemes:

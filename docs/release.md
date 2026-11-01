@@ -49,8 +49,8 @@ without a Gatekeeper warning on this Mac.
 Apple can close the MediaRemote workaround with any macOS update. After updating macOS, check that
 the adapter still answers (with something playing):
 ```
-APP=/Applications/SmollNotch.app/Contents
-/usr/bin/perl $APP/Resources/mediaremote-adapter.pl $APP/Frameworks/MediaRemoteAdapter.framework get --no-artwork
+APP="/Applications/Smoll Notch.app/Contents"
+/usr/bin/perl "$APP/Resources/mediaremote-adapter.pl" "$APP/Frameworks/MediaRemoteAdapter.framework" get --no-artwork
 ```
 If it prints nothing or fails, look for an update of
 [mediaremote-adapter](https://github.com/ungive/mediaremote-adapter), update `Vendor/MediaRemoteAdapter`

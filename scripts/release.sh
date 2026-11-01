@@ -31,19 +31,19 @@ echo "▸ Exporting with Developer ID"
 xcodebuild -exportArchive -archivePath $ARCHIVE -exportPath $OUT/export \
   -exportOptionsPlist scripts/ExportOptions.plist -allowProvisioningUpdates -quiet
 
-APP=$OUT/export/SmollNotch.app
-VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" $APP/Contents/Info.plist)
-BUILD=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" $APP/Contents/Info.plist)
+APP="$OUT/export/Smoll Notch.app"
+VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "$APP/Contents/Info.plist")
+BUILD=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$APP/Contents/Info.plist")
 DMG=$OUT/SmollNotch-$VERSION.dmg
 
 echo "▸ Verifying signature ($VERSION, build $BUILD)"
-codesign --verify --deep --strict --verbose=1 $APP
-codesign -dv $APP 2>&1 | grep -E "Authority=Developer ID Application|TeamIdentifier=2567P974L9" >/dev/null \
+codesign --verify --deep --strict --verbose=1 "$APP"
+codesign -dv "$APP" 2>&1 | grep -E "Authority=Developer ID Application|TeamIdentifier=2567P974L9" >/dev/null \
   || { echo "✗ App is not signed with Developer ID of team 2567P974L9"; exit 1; }
 
 echo "▸ Building DMG"
 STAGING=$OUT/dmg
-mkdir -p $STAGING && cp -R $APP $STAGING/ && ln -s /Applications $STAGING/Programme
+mkdir -p $STAGING && cp -R "$APP" $STAGING/ && ln -s /Applications $STAGING/Programme
 hdiutil create -volname "Smoll Notch" -srcfolder $STAGING -fs HFS+ -format UDZO -ov $DMG -quiet
 codesign --sign "Developer ID Application" --timestamp $DMG
 
