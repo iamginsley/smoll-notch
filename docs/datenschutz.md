@@ -20,8 +20,6 @@ E-Mail: dominik.gintsberger@outlook.de
 
 Die App liest die Informationen, die macOS unter „Läuft gerade“ bereitstellt: Titel, Interpret, Album, Cover, Dauer, Wiedergabeposition und die App, die gerade abspielt. Diese Daten werden nur auf deinem Mac angezeigt, nicht gespeichert und nicht übertragen.
 
-Für den Lautstärkeregler liest die App das aktuelle Ausgabegerät deines Mac (Name, z. B. „AirPods Pro“, und Lautstärke) und ändert es auf deinen Wunsch. Auch das bleibt auf deinem Mac.
-
 ## Apple Music steuern
 
 Zum Favorisieren steuert die App Apple Music über AppleScript. macOS fragt dich beim ersten Mal um Erlaubnis; du kannst sie jederzeit unter Systemeinstellungen › Datenschutz & Sicherheit › Automation widerrufen. Gelesen und geändert wird nur, ob der aktuelle Titel ein Favorit ist.

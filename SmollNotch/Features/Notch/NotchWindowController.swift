@@ -140,7 +140,7 @@ final class NotchWindowController {
         panel.ignoresMouseEvents = !(island.isHovering && island.mode == .expanded)
     }
 
-    /// Swipes and scrolls over the open island. Returns true when the event was used.
+    /// Swipes over the open island. Returns true when the event was used.
     private func scrolled(_ event: NSEvent) -> Bool {
         guard event.window === panel, island.isHovering, island.mode == .expanded,
               event.momentumPhase.isEmpty
@@ -157,7 +157,6 @@ final class NotchWindowController {
         switch gestures.handle(delta: delta, phase: phase, precise: event.hasPreciseScrollingDeltas) {
         case .next: island.model.next()
         case .previous: island.model.previous()
-        case .volume(let change): island.model.changeVolume(by: change)
         case nil: break
         }
         return true

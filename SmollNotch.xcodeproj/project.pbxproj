@@ -16,7 +16,6 @@
 		27B1B3B4A45555A376622794 /* NowPlayingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC5CD059E278A074AE7FC0 /* NowPlayingService.swift */; };
 		2C21A548E8155EB9FEBE63CD /* now_playing.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D50ED951C5E6D9CFA58B59 /* now_playing.m */; };
 		31CFD56DC3226127FB3FF02B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A355CA7164771B5165FCB7 /* AppKit.framework */; };
-		32C33C1CC242C496A6486434 /* AudioOutputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6715D67D47FB9F7FB55AEED8 /* AudioOutputService.swift */; };
 		373339EEF9ED3AC034A45F1C /* MediaRemote.h in Headers */ = {isa = PBXBuildFile; fileRef = D54D6B9EE18AE94F59D67958 /* MediaRemote.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3994E5F64B4AFEC52ED7DB1C /* env.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA3B5CBB9B95923B064BB0 /* env.m */; };
 		3B427294CABE87DF361A6D3E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252698CABC421E84D793C23A /* Theme.swift */; };
@@ -29,8 +28,6 @@
 		6599E9EA149927F09E302037 /* stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5321EBA4DF0011B028F57C70 /* stream.m */; };
 		65B7CDD0000015D631AEC1A4 /* SmollNotchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5084D58836FE5F3520C28 /* SmollNotchApp.swift */; };
 		66ED5574679791AF46432BE6 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8573048AF07C68AE88693 /* SettingsViewModel.swift */; };
-		68424C5A8491D9365176CB0D /* VolumeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332E779FCAB6AEEF9E4FD07 /* VolumeRow.swift */; };
-		694BCBAB5FE80DC7B9EEC4F9 /* AudioOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED13F006D3D31D05F90A083 /* AudioOutput.swift */; };
 		6C3A75C5AEDF38B92FB10714 /* helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D83F278B495C7AD81B1104 /* helpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		701730B8C88E2943000B6218 /* env.h in Headers */ = {isa = PBXBuildFile; fileRef = AE33772E94B9A3046274ED78 /* env.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71F9357649F8014357F1BB13 /* helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B8AFD5A02C6815ACCC4271 /* helpers.m */; };
@@ -115,13 +112,11 @@
 		549133B3C62A349E89F8EABD /* NowPlayingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingTests.swift; sourceTree = "<group>"; };
 		550EC9A814ADDFED4391F63D /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
 		58959B38E6450F892FDDAAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		5ED13F006D3D31D05F90A083 /* AudioOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioOutput.swift; sourceTree = "<group>"; };
 		61B8AFD5A02C6815ACCC4271 /* helpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = helpers.m; sourceTree = "<group>"; };
 		6232EF51353876B6E3CCE559 /* NotchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchView.swift; sourceTree = "<group>"; };
 		62799DC6CD2784AAC0CE267A /* get.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = get.h; sourceTree = "<group>"; };
 		62CCFCD6797B4811A377BD35 /* NowPlayingStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingStream.swift; sourceTree = "<group>"; };
 		6646F9807F19CCA9E46C2B55 /* MediaRemoteAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaRemoteAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6715D67D47FB9F7FB55AEED8 /* AudioOutputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioOutputService.swift; sourceTree = "<group>"; };
 		6C93B117982025609E186747 /* NotchIsland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchIsland.swift; sourceTree = "<group>"; };
 		7CA654FB3405A7DD90C0AD56 /* MediaRemote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaRemote.m; sourceTree = "<group>"; };
 		80820C7C367041879F08FACD /* NotchLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchLayoutTests.swift; sourceTree = "<group>"; };
@@ -144,7 +139,6 @@
 		C9F4051AEFAD7F1E708098DD /* SmollNotch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmollNotch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1AB1085A3BB4B6FA84461F7 /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		D1D83F278B495C7AD81B1104 /* helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
-		D332E779FCAB6AEEF9E4FD07 /* VolumeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeRow.swift; sourceTree = "<group>"; };
 		D54D6B9EE18AE94F59D67958 /* MediaRemote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRemote.h; sourceTree = "<group>"; };
 		D894411332352312EDF20229 /* NotchWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchWindowController.swift; sourceTree = "<group>"; };
 		D930D93E12CBF6B4FD8CB637 /* NowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying.swift; sourceTree = "<group>"; };
@@ -215,7 +209,6 @@
 		2B07558DF5A0A25640E3315D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				6715D67D47FB9F7FB55AEED8 /* AudioOutputService.swift */,
 				AF32CCE90502C9CF11C13E71 /* FavoriteService.swift */,
 				F4FC5CD059E278A074AE7FC0 /* NowPlayingService.swift */,
 				62CCFCD6797B4811A377BD35 /* NowPlayingStream.swift */,
@@ -226,7 +219,6 @@
 		42F50BE41CF1F374757B4C35 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5ED13F006D3D31D05F90A083 /* AudioOutput.swift */,
 				D930D93E12CBF6B4FD8CB637 /* NowPlaying.swift */,
 			);
 			path = Models;
@@ -416,7 +408,6 @@
 				6232EF51353876B6E3CCE559 /* NotchView.swift */,
 				F801504216EF85A1173BA047 /* NotchViewModel.swift */,
 				D894411332352312EDF20229 /* NotchWindowController.swift */,
-				D332E779FCAB6AEEF9E4FD07 /* VolumeRow.swift */,
 			);
 			path = Notch;
 			sourceTree = "<group>";
@@ -596,8 +587,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				694BCBAB5FE80DC7B9EEC4F9 /* AudioOutput.swift in Sources */,
-				32C33C1CC242C496A6486434 /* AudioOutputService.swift in Sources */,
 				4313C337383765A863429DA3 /* DemoNowPlayingSource.swift in Sources */,
 				5A69D08C489C1ED69DF47C09 /* FavoriteService.swift in Sources */,
 				F2A7E001FD222C6F6E40F35B /* IslandGestures.swift in Sources */,
@@ -615,7 +604,6 @@
 				66ED5574679791AF46432BE6 /* SettingsViewModel.swift in Sources */,
 				65B7CDD0000015D631AEC1A4 /* SmollNotchApp.swift in Sources */,
 				3B427294CABE87DF361A6D3E /* Theme.swift in Sources */,
-				68424C5A8491D9365176CB0D /* VolumeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

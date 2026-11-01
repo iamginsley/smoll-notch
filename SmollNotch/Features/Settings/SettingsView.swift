@@ -47,7 +47,6 @@ struct SettingsView: View {
 
             Section("Gesten auf der geöffneten Insel") {
                 LabeledContent("Mit zwei Fingern nach links oder rechts wischen", value: "Nächster oder vorheriger Titel")
-                LabeledContent("Mit zwei Fingern nach oben oder unten wischen", value: "Lautstärke")
             }
 
             Section {

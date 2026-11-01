@@ -45,8 +45,7 @@ final class NotchIsland {
     var layout: NotchLayout {
         NotchLayout(
             mode: mode, notchSize: notchSize, floating: !hasNotch,
-            showsProgress: model.nowPlaying?.duration != nil,
-            showsVolume: model.audioOutput != nil
+            showsProgress: model.nowPlaying?.duration != nil
         )
     }
 }

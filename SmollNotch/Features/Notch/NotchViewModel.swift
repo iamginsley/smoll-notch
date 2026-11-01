@@ -18,22 +18,17 @@ final class NotchViewModel {
     private(set) var isPeeking = false
     /// Apple Music favorite state of the current track, nil where it is unknown or unsupported.
     private(set) var isFavorite: Bool?
-    private(set) var audioOutput: AudioOutput?
-    private(set) var outputDevices: [AudioOutputDevice] = []
 
     private let source: NowPlayingSource
     private let favorites: FavoriteService
-    private let audio: AudioOutputService
     @ObservationIgnored private var settingsObserver: NSObjectProtocol?
     @ObservationIgnored private var peekTask: Task<Void, Never>?
     @ObservationIgnored private var favoriteTask: Task<Void, Never>?
 
-    init(source: NowPlayingSource, favorites: FavoriteService, audio: AudioOutputService = AudioOutputService()) {
+    init(source: NowPlayingSource, favorites: FavoriteService) {
         self.source = source
         self.favorites = favorites
-        self.audio = audio
         source.onChange = { [weak self] in self?.update($0) }
-        audio.onChange = { [weak self] in self?.audioChanged() }
         settingsObserver = NotificationCenter.default.addObserver(
             forName: UserDefaults.didChangeNotification, object: nil, queue: .main
         ) { [weak self] _ in
@@ -41,11 +36,7 @@ final class NotchViewModel {
         }
     }
 
-    func start() {
-        source.start()
-        audio.start()
-        audioChanged()
-    }
+    func start() { source.start() }
 
     func stop() { source.stop() }
 
@@ -68,19 +59,6 @@ final class NotchViewModel {
         isFavorite = !current
         favoriteTask?.cancel()
         favoriteTask = Task { [favorites] in await favorites.setFavorite(!current) }
-    }
-
-    func setVolume(_ volume: Double) {
-        audio.setVolume(Float(min(max(volume, 0), 1)))
-    }
-
-    func changeVolume(by delta: Double) {
-        guard let volume = audioOutput?.volume else { return }
-        setVolume(Double(volume) + delta)
-    }
-
-    func selectOutput(_ device: AudioOutputDevice) {
-        audio.select(device)
     }
 
     func openSource() {
@@ -145,10 +123,5 @@ final class NotchViewModel {
             guard !Task.isCancelled else { return }
             self?.isFavorite = value
         }
-    }
-
-    private func audioChanged() {
-        audioOutput = audio.current
-        outputDevices = audio.devices
     }
 }

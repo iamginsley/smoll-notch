@@ -100,13 +100,6 @@ struct NotchView: View {
                     .frame(width: layout.progress.width, height: layout.progress.height)
                     .offset(x: layout.progress.minX, y: layout.progress.minY)
             }
-
-            if let output = model.audioOutput {
-                VolumeRow(output: output, devices: model.outputDevices,
-                          onVolume: model.setVolume, onSelect: model.selectOutput)
-                    .frame(width: layout.volume.width, height: layout.volume.height)
-                    .offset(x: layout.volume.minX, y: layout.volume.minY)
-            }
         }
     }
 
