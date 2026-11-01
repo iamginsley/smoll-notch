@@ -5,7 +5,7 @@ struct SmollNotchApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     var body: some Scene {
-        MenuBarExtra("Smoll Notch", systemImage: "music.note") {
+        MenuBarExtra("Smoll Notch", image: "MenuBarIcon") {
             SettingsLink { Text("Einstellungen …") }
                 .keyboardShortcut(",")
             Divider()
