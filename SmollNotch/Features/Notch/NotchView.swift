@@ -1,28 +1,30 @@
 import SwiftUI
 
 struct NotchView: View {
-    @Bindable var model: NotchViewModel
+    let island: NotchIsland
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
+    private var model: NotchViewModel { island.model }
+
     var body: some View {
-        island
+        self.island(island.layout)
+            .padding(.top, island.topInset)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            .animation(modeAnimation, value: model.mode)
-            .animation(.smooth(duration: 0.35), value: model.layout.size.height)
+            .animation(modeAnimation, value: island.mode)
+            .animation(.smooth(duration: 0.35), value: island.layout.size.height)
             .preferredColorScheme(.dark)
     }
 
     /// Opening gets a little bounce, closing settles quickly. Reduce Motion drops the bounce entirely.
     private var modeAnimation: Animation {
         if reduceMotion { return .smooth(duration: 0.25) }
-        return model.mode == .expanded ? .spring(duration: 0.5, bounce: 0.28) : .spring(duration: 0.38, bounce: 0.12)
+        return island.mode == .expanded ? .spring(duration: 0.5, bounce: 0.28) : .spring(duration: 0.38, bounce: 0.12)
     }
 
-    private var isExpanded: Bool { model.mode == .expanded }
+    private var isExpanded: Bool { island.mode == .expanded }
 
-    private var island: some View {
-        let layout = model.layout
-        let shape = NotchShape(topRadius: layout.topRadius, bottomRadius: layout.bottomRadius)
+    private func island(_ layout: NotchLayout) -> some View {
+        let shape = NotchShape(topRadius: layout.topRadius, bottomRadius: layout.bottomRadius, floating: !island.hasNotch)
         return ZStack(alignment: .topLeading) {
             if isExpanded {
                 expandedContent(layout)
@@ -32,16 +34,17 @@ struct NotchView: View {
             EqualizerView(isPlaying: model.nowPlaying?.isPlaying ?? false, tint: model.tint)
                 .frame(width: layout.equalizer.width, height: layout.equalizer.height)
                 .offset(x: layout.equalizer.minX, y: layout.equalizer.minY)
-                .opacity(model.mode == .hidden ? 0 : 1)
+                .opacity(island.mode == .hidden ? 0 : 1)
         }
         .frame(width: layout.size.width, height: layout.size.height, alignment: .topLeading)
         .background(Color.island)
         .clipShape(shape)
         // Key line in the cover color, like the Dynamic Island's outline in dark surroundings.
-        .overlay(shape.stroke(model.tint.opacity(isExpanded ? 0.35 : 0), lineWidth: 1))
-        .shadow(color: .black.opacity(isExpanded ? 0.5 : 0), radius: 14, y: 6)
+        // A floating pill always gets a faint one so it reads against dark wallpapers.
+        .overlay(shape.stroke(model.tint.opacity(isExpanded ? 0.35 : island.hasNotch ? 0 : 0.2), lineWidth: 1))
+        .shadow(color: .black.opacity(isExpanded || !island.hasNotch ? 0.5 : 0), radius: 14, y: 6)
         // Without a hardware notch there is nothing to hide behind, so fade out completely.
-        .opacity(model.mode == .hidden && !model.hasNotch ? 0 : 1)
+        .opacity(island.mode == .hidden && !island.hasNotch ? 0 : 1)
         .accessibilityElement(children: isExpanded ? .contain : .ignore)
         .accessibilityLabel(isExpanded ? "Läuft gerade" : nowPlayingLabel)
     }
@@ -55,7 +58,7 @@ struct NotchView: View {
         .frame(width: layout.artwork.width, height: layout.artwork.height)
         .shadow(color: model.tint.opacity(isExpanded ? 0.45 : 0), radius: 16)
         .offset(x: layout.artwork.minX, y: layout.artwork.minY)
-        .opacity(model.mode == .hidden ? 0 : 1)
+        .opacity(island.mode == .hidden ? 0 : 1)
         .accessibilityLabel("Quell-App öffnen")
         .help("Quell-App öffnen")
     }
@@ -97,6 +100,13 @@ struct NotchView: View {
                     .frame(width: layout.progress.width, height: layout.progress.height)
                     .offset(x: layout.progress.minX, y: layout.progress.minY)
             }
+
+            if let output = model.audioOutput {
+                VolumeRow(output: output, devices: model.outputDevices,
+                          onVolume: model.setVolume, onSelect: model.selectOutput)
+                    .frame(width: layout.volume.width, height: layout.volume.height)
+                    .offset(x: layout.volume.minX, y: layout.volume.minY)
+            }
         }
     }
 
@@ -110,9 +120,21 @@ struct NotchView: View {
                 action: model.togglePlayPause
             )
             ControlButton(systemImage: "forward.fill", label: "Weiter", action: model.next)
+            Spacer(minLength: 0)
+            if let favorite = model.isFavorite {
+                ControlButton(
+                    systemImage: favorite ? "star.fill" : "star",
+                    label: favorite ? "Favorit entfernen" : "Favorisieren",
+                    tint: favorite ? model.tint : .islandSecondary,
+                    action: model.toggleFavorite
+                )
+                .transition(.opacity)
+            }
         }
         .padding(.leading, -12)
+        .padding(.trailing, -10)
         .padding(.bottom, -8)
+        .animation(.smooth(duration: 0.2), value: model.isFavorite)
     }
 
     private var nowPlayingLabel: String {
@@ -158,6 +180,7 @@ private struct ControlButton: View {
     let systemImage: String
     let label: LocalizedStringKey
     var size: CGFloat = 17
+    var tint: Color = .islandPrimary
     let action: () -> Void
     @State private var isHovering = false
 
@@ -166,7 +189,7 @@ private struct ControlButton: View {
             Image(systemName: systemImage)
                 .font(.system(size: size, weight: .semibold))
                 .contentTransition(.symbolEffect(.replace))
-                .foregroundStyle(Color.islandPrimary)
+                .foregroundStyle(tint)
                 .frame(width: Theme.minTapSize, height: Theme.minTapSize)
                 .background(Circle().fill(Color.white.opacity(isHovering ? 0.14 : 0)).padding(4))
                 .contentShape(.circle)
@@ -347,8 +370,9 @@ private struct ProgressBar: View {
 
 #if DEBUG
 #Preview {
-    let model = NotchViewModel(source: DemoNowPlayingSource(), forceExpanded: true)
+    let model = NotchViewModel(source: DemoNowPlayingSource(), favorites: DemoFavoriteService())
+    let island = NotchIsland(model: model, notchSize: CGSize(width: 185, height: 32), hasNotch: true, forceExpanded: true)
     model.start()
-    return NotchView(model: model).frame(width: 640, height: 240).background(.gray)
+    return NotchView(island: island).frame(width: 680, height: 260).background(.gray)
 }
 #endif

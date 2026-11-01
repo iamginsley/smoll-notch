@@ -28,6 +28,8 @@
 	<string>public.app-category.music</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Damit du Songs in Apple Music direkt aus der Notch favorisieren kannst.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>© 2026 Dominik Gintsberger</string>
 </dict>

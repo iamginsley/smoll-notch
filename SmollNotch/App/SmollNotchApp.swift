@@ -22,26 +22,77 @@ struct SmollNotchApp: App {
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private var model: NotchViewModel?
-    private var windowController: NotchWindowController?
+    /// One island per shown screen, keyed by display ID.
+    private var controllers: [CGDirectDisplayID: NotchWindowController] = [:]
+    private var observers: [NSObjectProtocol] = []
+    private var screenChoice = ScreenChoice.current
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        let model = NotchViewModel(source: Self.makeSource(), forceExpanded: LaunchFlags.expanded)
-        let windowController = NotchWindowController(model: model)
-        windowController.show()
-        model.start()
+        SettingsKey.registerDefaults()
+        screenChoice = ScreenChoice.current
+        let model = Self.makeModel()
         self.model = model
-        self.windowController = windowController
+        updateScreens()
+        model.start()
+
+        observers.append(NotificationCenter.default.addObserver(
+            forName: NSApplication.didChangeScreenParametersNotification, object: nil, queue: .main
+        ) { [weak self] _ in
+            MainActor.assumeIsolated { self?.updateScreens() }
+        })
+        observers.append(NotificationCenter.default.addObserver(
+            forName: UserDefaults.didChangeNotification, object: nil, queue: .main
+        ) { [weak self] _ in
+            MainActor.assumeIsolated {
+                guard let self, ScreenChoice.current != self.screenChoice else { return }
+                self.screenChoice = ScreenChoice.current
+                self.updateScreens()
+            }
+        })
     }
 
     func applicationWillTerminate(_ notification: Notification) {
         model?.stop()
     }
 
-    private static func makeSource() -> NowPlayingSource {
+    /// Adds, moves and removes islands so they match the connected screens and the setting.
+    private func updateScreens() {
+        guard let model else { return }
+        let screens = NSScreen.screens
+        let chosen = screenChoice
+            .screenIndices(hasNotch: screens.map { $0.safeAreaInsets.top > 0 })
+            .map { screens[$0] }
+        let wanted = Dictionary(chosen.compactMap { screen in screen.displayID.map { ($0, screen) } },
+                                uniquingKeysWith: { first, _ in first })
+
+        for (id, controller) in controllers where wanted[id] == nil {
+            controller.close()
+            controllers[id] = nil
+        }
+        for (id, screen) in wanted {
+            if let controller = controllers[id] {
+                controller.update(screen: screen)
+            } else {
+                let controller = NotchWindowController(model: model, screen: screen, forceExpanded: LaunchFlags.expanded)
+                controller.show()
+                controllers[id] = controller
+            }
+        }
+    }
+
+    private static func makeModel() -> NotchViewModel {
         #if DEBUG
-        if LaunchFlags.demo { return DemoNowPlayingSource() }
+        if LaunchFlags.demo {
+            return NotchViewModel(source: DemoNowPlayingSource(), favorites: DemoFavoriteService())
+        }
         #endif
-        return NowPlayingService()
+        return NotchViewModel(source: NowPlayingService(), favorites: MusicFavoriteService())
+    }
+}
+
+private extension NSScreen {
+    var displayID: CGDirectDisplayID? {
+        deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? CGDirectDisplayID
     }
 }
 

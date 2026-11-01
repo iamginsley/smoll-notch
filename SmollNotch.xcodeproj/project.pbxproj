@@ -16,6 +16,7 @@
 		27B1B3B4A45555A376622794 /* NowPlayingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC5CD059E278A074AE7FC0 /* NowPlayingService.swift */; };
 		2C21A548E8155EB9FEBE63CD /* now_playing.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D50ED951C5E6D9CFA58B59 /* now_playing.m */; };
 		31CFD56DC3226127FB3FF02B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A355CA7164771B5165FCB7 /* AppKit.framework */; };
+		32C33C1CC242C496A6486434 /* AudioOutputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6715D67D47FB9F7FB55AEED8 /* AudioOutputService.swift */; };
 		373339EEF9ED3AC034A45F1C /* MediaRemote.h in Headers */ = {isa = PBXBuildFile; fileRef = D54D6B9EE18AE94F59D67958 /* MediaRemote.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3994E5F64B4AFEC52ED7DB1C /* env.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA3B5CBB9B95923B064BB0 /* env.m */; };
 		3B427294CABE87DF361A6D3E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252698CABC421E84D793C23A /* Theme.swift */; };
@@ -23,13 +24,18 @@
 		41D0E3E2B3C372CE0E57A913 /* globals.h in Headers */ = {isa = PBXBuildFile; fileRef = 550EC9A814ADDFED4391F63D /* globals.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4313C337383765A863429DA3 /* DemoNowPlayingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11ABA92BD13350040837F2A /* DemoNowPlayingSource.swift */; };
 		4604C91BA2D1FE52D8E1D20B /* MediaRemoteAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = A4262C9F8D2C2BC2176A83F6 /* MediaRemoteAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49F68B2260B45E6A0C1A0633 /* NotchIsland.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C93B117982025609E186747 /* NotchIsland.swift */; };
+		5A69D08C489C1ED69DF47C09 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32CCE90502C9CF11C13E71 /* FavoriteService.swift */; };
 		6599E9EA149927F09E302037 /* stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5321EBA4DF0011B028F57C70 /* stream.m */; };
 		65B7CDD0000015D631AEC1A4 /* SmollNotchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5084D58836FE5F3520C28 /* SmollNotchApp.swift */; };
 		66ED5574679791AF46432BE6 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8573048AF07C68AE88693 /* SettingsViewModel.swift */; };
+		68424C5A8491D9365176CB0D /* VolumeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332E779FCAB6AEEF9E4FD07 /* VolumeRow.swift */; };
+		694BCBAB5FE80DC7B9EEC4F9 /* AudioOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED13F006D3D31D05F90A083 /* AudioOutput.swift */; };
 		6C3A75C5AEDF38B92FB10714 /* helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D83F278B495C7AD81B1104 /* helpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		701730B8C88E2943000B6218 /* env.h in Headers */ = {isa = PBXBuildFile; fileRef = AE33772E94B9A3046274ED78 /* env.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71F9357649F8014357F1BB13 /* helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B8AFD5A02C6815ACCC4271 /* helpers.m */; };
 		7246B41EE2B00352EDBF1732 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926281A4DC05298B0797827F /* SettingsView.swift */; };
+		78CD3FDD6FA0815277EC8561 /* ScreenChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925383F3E5A3FAF292160A97 /* ScreenChoice.swift */; };
 		7B126E28B76423928605328F /* NowPlayingStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCFCD6797B4811A377BD35 /* NowPlayingStream.swift */; };
 		7E8D1725F57D04A76B61F0F3 /* Debounce.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3E2DCD5229FAA7456BA1 /* Debounce.m */; };
 		82A9149811C6E62FBDE9B4B7 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = A396CA8ECCE041AFCE02C8D6 /* test.m */; };
@@ -49,9 +55,11 @@
 		DE084176453F20DD7C6CF159 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CF4E1339231E48E5A89861 /* UniformTypeIdentifiers.framework */; };
 		E96DA0D645DC30DB1EFC14F2 /* globals.m in Sources */ = {isa = PBXBuildFile; fileRef = B82EBF90CBF52BDE2CC97B22 /* globals.m */; };
 		E9AA703D412CC43BE041F3AB /* NotchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6232EF51353876B6E3CCE559 /* NotchView.swift */; };
+		E9D89432E5B4761CA5611445 /* FeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C9FD1A901F9FF51516448 /* FeatureTests.swift */; };
 		EE295DA533B64A9C7C395531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E1F18D7753C30226B41026 /* Assets.xcassets */; };
 		EEFA5F12F3A5EA6013570B97 /* NowPlayingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549133B3C62A349E89F8EABD /* NowPlayingTests.swift */; };
 		F193DA0BE9D260B3C0F03DCA /* Debounce.h in Headers */ = {isa = PBXBuildFile; fileRef = C42E5FD8169EAD8B4E7C1FBC /* Debounce.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2A7E001FD222C6F6E40F35B /* IslandGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D8F4AA3323C10B67D5C5F1 /* IslandGestures.swift */; };
 		FAC19A4794A61A284422C6B4 /* get.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9FC76020CE56086D1BEC69 /* get.m */; };
 		FBA124AD8BF74A1D1E43C563 /* send.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E6E231FE4E481E3FADDDA6 /* send.m */; };
 /* End PBXBuildFile section */
@@ -88,11 +96,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01D8F4AA3323C10B67D5C5F1 /* IslandGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandGestures.swift; sourceTree = "<group>"; };
 		05D50ED951C5E6D9CFA58B59 /* now_playing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = now_playing.m; sourceTree = "<group>"; };
 		0BE8573048AF07C68AE88693 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		0DB4A4C5462656446749B724 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		12E1794DFF2B9B7E4263E55F /* now_playing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = now_playing.h; sourceTree = "<group>"; };
 		1500DF51C6FD17A0697275DD /* NotchLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchLayout.swift; sourceTree = "<group>"; };
+		180C9FD1A901F9FF51516448 /* FeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTests.swift; sourceTree = "<group>"; };
 		1E36A264F4E5454A788DD6FF /* shuffle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shuffle.m; sourceTree = "<group>"; };
 		252698CABC421E84D793C23A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		262FD34EDF2D7BB362BB4FA4 /* speed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = speed.m; sourceTree = "<group>"; };
@@ -105,15 +115,19 @@
 		549133B3C62A349E89F8EABD /* NowPlayingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingTests.swift; sourceTree = "<group>"; };
 		550EC9A814ADDFED4391F63D /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
 		58959B38E6450F892FDDAAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5ED13F006D3D31D05F90A083 /* AudioOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioOutput.swift; sourceTree = "<group>"; };
 		61B8AFD5A02C6815ACCC4271 /* helpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = helpers.m; sourceTree = "<group>"; };
 		6232EF51353876B6E3CCE559 /* NotchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchView.swift; sourceTree = "<group>"; };
 		62799DC6CD2784AAC0CE267A /* get.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = get.h; sourceTree = "<group>"; };
 		62CCFCD6797B4811A377BD35 /* NowPlayingStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingStream.swift; sourceTree = "<group>"; };
 		6646F9807F19CCA9E46C2B55 /* MediaRemoteAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaRemoteAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6715D67D47FB9F7FB55AEED8 /* AudioOutputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioOutputService.swift; sourceTree = "<group>"; };
+		6C93B117982025609E186747 /* NotchIsland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchIsland.swift; sourceTree = "<group>"; };
 		7CA654FB3405A7DD90C0AD56 /* MediaRemote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaRemote.m; sourceTree = "<group>"; };
 		80820C7C367041879F08FACD /* NotchLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchLayoutTests.swift; sourceTree = "<group>"; };
 		82A5084D58836FE5F3520C28 /* SmollNotchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmollNotchApp.swift; sourceTree = "<group>"; };
 		904728BED3772114BB08D54D /* NotchShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchShape.swift; sourceTree = "<group>"; };
+		925383F3E5A3FAF292160A97 /* ScreenChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenChoice.swift; sourceTree = "<group>"; };
 		926281A4DC05298B0797827F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9533E5D274C3232CE7CD4DDD /* SnapshotRender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotRender.swift; sourceTree = "<group>"; };
 		97A962132805A5D439194F4A /* SmollNotchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmollNotchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +136,7 @@
 		A4262C9F8D2C2BC2176A83F6 /* MediaRemoteAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRemoteAdapter.h; sourceTree = "<group>"; };
 		AC9FC76020CE56086D1BEC69 /* get.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = get.m; sourceTree = "<group>"; };
 		AE33772E94B9A3046274ED78 /* env.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = env.h; sourceTree = "<group>"; };
+		AF32CCE90502C9CF11C13E71 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
 		B1F96494B3CB4C804744E370 /* repeat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = repeat.m; sourceTree = "<group>"; };
 		B82EBF90CBF52BDE2CC97B22 /* globals.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = globals.m; sourceTree = "<group>"; };
 		C42E5FD8169EAD8B4E7C1FBC /* Debounce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Debounce.h; sourceTree = "<group>"; };
@@ -129,6 +144,7 @@
 		C9F4051AEFAD7F1E708098DD /* SmollNotch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmollNotch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1AB1085A3BB4B6FA84461F7 /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		D1D83F278B495C7AD81B1104 /* helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
+		D332E779FCAB6AEEF9E4FD07 /* VolumeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeRow.swift; sourceTree = "<group>"; };
 		D54D6B9EE18AE94F59D67958 /* MediaRemote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRemote.h; sourceTree = "<group>"; };
 		D894411332352312EDF20229 /* NotchWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchWindowController.swift; sourceTree = "<group>"; };
 		D930D93E12CBF6B4FD8CB637 /* NowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying.swift; sourceTree = "<group>"; };
@@ -168,6 +184,7 @@
 		1C09512081EE1BA9D7008133 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				925383F3E5A3FAF292160A97 /* ScreenChoice.swift */,
 				926281A4DC05298B0797827F /* SettingsView.swift */,
 				0BE8573048AF07C68AE88693 /* SettingsViewModel.swift */,
 			);
@@ -198,6 +215,8 @@
 		2B07558DF5A0A25640E3315D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6715D67D47FB9F7FB55AEED8 /* AudioOutputService.swift */,
+				AF32CCE90502C9CF11C13E71 /* FavoriteService.swift */,
 				F4FC5CD059E278A074AE7FC0 /* NowPlayingService.swift */,
 				62CCFCD6797B4811A377BD35 /* NowPlayingStream.swift */,
 			);
@@ -207,6 +226,7 @@
 		42F50BE41CF1F374757B4C35 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5ED13F006D3D31D05F90A083 /* AudioOutput.swift */,
 				D930D93E12CBF6B4FD8CB637 /* NowPlaying.swift */,
 			);
 			path = Models;
@@ -344,6 +364,7 @@
 		C7AFCBD62933E315D80767C0 /* SmollNotchTests */ = {
 			isa = PBXGroup;
 			children = (
+				180C9FD1A901F9FF51516448 /* FeatureTests.swift */,
 				80820C7C367041879F08FACD /* NotchLayoutTests.swift */,
 				549133B3C62A349E89F8EABD /* NowPlayingTests.swift */,
 				9533E5D274C3232CE7CD4DDD /* SnapshotRender.swift */,
@@ -388,11 +409,14 @@
 		FFD9CE89D1FBE93FBBDF9491 /* Notch */ = {
 			isa = PBXGroup;
 			children = (
+				01D8F4AA3323C10B67D5C5F1 /* IslandGestures.swift */,
+				6C93B117982025609E186747 /* NotchIsland.swift */,
 				1500DF51C6FD17A0697275DD /* NotchLayout.swift */,
 				904728BED3772114BB08D54D /* NotchShape.swift */,
 				6232EF51353876B6E3CCE559 /* NotchView.swift */,
 				F801504216EF85A1173BA047 /* NotchViewModel.swift */,
 				D894411332352312EDF20229 /* NotchWindowController.swift */,
+				D332E779FCAB6AEEF9E4FD07 /* VolumeRow.swift */,
 			);
 			path = Notch;
 			sourceTree = "<group>";
@@ -561,6 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D89432E5B4761CA5611445 /* FeatureTests.swift in Sources */,
 				DD432AEFA81627F24281433B /* NotchLayoutTests.swift in Sources */,
 				EEFA5F12F3A5EA6013570B97 /* NowPlayingTests.swift in Sources */,
 				417FD6E5C13B0018AAA8E330 /* SnapshotRender.swift in Sources */,
@@ -571,7 +596,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				694BCBAB5FE80DC7B9EEC4F9 /* AudioOutput.swift in Sources */,
+				32C33C1CC242C496A6486434 /* AudioOutputService.swift in Sources */,
 				4313C337383765A863429DA3 /* DemoNowPlayingSource.swift in Sources */,
+				5A69D08C489C1ED69DF47C09 /* FavoriteService.swift in Sources */,
+				F2A7E001FD222C6F6E40F35B /* IslandGestures.swift in Sources */,
+				49F68B2260B45E6A0C1A0633 /* NotchIsland.swift in Sources */,
 				18A68864CD9EBC3B1C410AE4 /* NotchLayout.swift in Sources */,
 				239DB53A537DF60FCFADE6AD /* NotchShape.swift in Sources */,
 				E9AA703D412CC43BE041F3AB /* NotchView.swift in Sources */,
@@ -580,10 +610,12 @@
 				88991D2FB3CF89ECC4A0C5D0 /* NowPlaying.swift in Sources */,
 				27B1B3B4A45555A376622794 /* NowPlayingService.swift in Sources */,
 				7B126E28B76423928605328F /* NowPlayingStream.swift in Sources */,
+				78CD3FDD6FA0815277EC8561 /* ScreenChoice.swift in Sources */,
 				7246B41EE2B00352EDBF1732 /* SettingsView.swift in Sources */,
 				66ED5574679791AF46432BE6 /* SettingsViewModel.swift in Sources */,
 				65B7CDD0000015D631AEC1A4 /* SmollNotchApp.swift in Sources */,
 				3B427294CABE87DF361A6D3E /* Theme.swift in Sources */,
+				68424C5A8491D9365176CB0D /* VolumeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

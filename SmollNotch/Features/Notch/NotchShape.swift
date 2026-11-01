@@ -1,10 +1,14 @@
 import SwiftUI
 
-/// The island outline: concave "ears" where it meets the menu bar, rounded corners at the bottom,
-/// just like the hardware notch it grows out of.
+/// The island outline.
+///
+/// Attached to a notch it has concave "ears" where it meets the menu bar and rounded corners at the
+/// bottom, like the hardware notch it grows out of. Floating (screens without a notch) it is a
+/// rounded rectangle, a capsule when the radius reaches half the height.
 struct NotchShape: Shape {
     var topRadius: CGFloat
     var bottomRadius: CGFloat
+    var floating = false
 
     var animatableData: AnimatablePair<CGFloat, CGFloat> {
         get { AnimatablePair(topRadius, bottomRadius) }
@@ -12,6 +16,10 @@ struct NotchShape: Shape {
     }
 
     func path(in rect: CGRect) -> Path {
+        if floating {
+            let radius = min(bottomRadius, rect.height / 2, rect.width / 2)
+            return Path(roundedRect: rect, cornerRadius: radius, style: .continuous)
+        }
         let top = min(topRadius, rect.width / 4)
         let bottom = min(bottomRadius, rect.height - top, (rect.width - 2 * top) / 2)
         var path = Path()

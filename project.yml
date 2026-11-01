@@ -40,6 +40,8 @@ targets:
       properties:
         # No sandbox: the app launches /usr/bin/perl to read MediaRemote (not possible from the sandbox).
         com.apple.security.app-sandbox: false
+        # Hardened runtime: allows Apple events to Music for favorites.
+        com.apple.security.automation.apple-events: true
     info:
       path: SmollNotch/Resources/Info.plist
       properties:
@@ -50,6 +52,7 @@ targets:
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         LSApplicationCategoryType: public.app-category.music
         LSUIElement: true
+        NSAppleEventsUsageDescription: Damit du Songs in Apple Music direkt aus der Notch favorisieren kannst.
         NSHumanReadableCopyright: © 2026 Dominik Gintsberger
     settings:
       base:

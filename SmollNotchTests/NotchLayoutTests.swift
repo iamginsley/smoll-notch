@@ -35,3 +35,16 @@ struct NotchLayoutTests {
         #expect(layout.size == notch)
     }
 }
+
+struct NotchLayoutVolumeTests {
+    @Test func volumeRowSitsBelowProgress() {
+        let layout = NotchLayout(mode: .expanded, notchSize: CGSize(width: 185, height: 32), showsProgress: true, showsVolume: true)
+        #expect(layout.volume.minY >= layout.progress.maxY)
+        #expect(layout.volume.maxY < layout.size.height)
+    }
+
+    @Test func floatingCompactIsACapsule() {
+        let layout = NotchLayout(mode: .compact, notchSize: NotchIsland.pillSize, floating: true, showsProgress: false)
+        #expect(layout.bottomRadius == layout.size.height / 2)
+    }
+}

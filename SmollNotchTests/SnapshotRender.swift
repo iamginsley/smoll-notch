@@ -6,21 +6,27 @@ import Testing
 @MainActor
 struct SnapshotRender {
     @Test(.enabled(if: ProcessInfo.processInfo.environment["SNAPSHOT_DIR"] != nil))
-    func render() throws {
+    func render() async throws {
         let dir = ProcessInfo.processInfo.environment["SNAPSHOT_DIR"]!
         // Second demo track has a 16:9 thumbnail, like YouTube.
-        for (name, expanded, wide) in [("expanded", true, false), ("expanded-wide", true, true), ("compact", false, false)] {
-            let model = NotchViewModel(source: DemoNowPlayingSource(), forceExpanded: expanded)
-            model.notchSize = CGSize(width: 185, height: 32)
+        let cases = [
+            ("expanded", true, false, true), ("expanded-wide", true, true, true), ("compact", false, false, true),
+            ("pill", false, false, false), ("pill-expanded", true, false, false),
+        ]
+        for (name, expanded, wide, hasNotch) in cases {
+            let model = NotchViewModel(source: DemoNowPlayingSource(), favorites: DemoFavoriteService())
+            let notch = hasNotch ? CGSize(width: 185, height: 32) : NotchIsland.pillSize
+            let island = NotchIsland(model: model, notchSize: notch, hasNotch: hasNotch, forceExpanded: expanded)
             model.start()
             if wide { model.next() }
             // Render through a real hosting view so the result matches what the panel draws.
-            let view = NSHostingView(rootView: NotchView(model: model).frame(width: 680, height: 240).background(Color.gray))
-            view.frame = CGRect(x: 0, y: 0, width: 680, height: 240)
+            let view = NSHostingView(rootView: NotchView(island: island).frame(width: 680, height: 260).background(Color.gray))
+            view.frame = CGRect(x: 0, y: 0, width: 680, height: 260)
             let window = NSWindow(contentRect: view.frame, styleMask: .borderless, backing: .buffered, defer: false)
             window.contentView = view
             view.layoutSubtreeIfNeeded()
-            RunLoop.main.run(until: .now + 1)
+            // Yield (rather than spinning the run loop) so main-actor tasks such as the favorite lookup run.
+            try await Task.sleep(for: .seconds(1))
             let rep = try #require(view.bitmapImageRepForCachingDisplay(in: view.bounds))
             view.cacheDisplay(in: view.bounds, to: rep)
             let png = rep.representation(using: .png, properties: [:])

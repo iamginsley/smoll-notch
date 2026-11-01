@@ -1,6 +1,6 @@
 # Datenschutzerklärung für Smoll Notch
 
-Stand: 31. Oktober 2026
+Stand: 1. November 2026
 
 Smoll Notch zeigt in der Notch deines Mac an, was gerade abgespielt wird, und lässt dich die Wiedergabe steuern.
 
@@ -20,7 +20,15 @@ E-Mail: dominik.gintsberger@outlook.de
 
 Die App liest die Informationen, die macOS unter „Läuft gerade“ bereitstellt: Titel, Interpret, Album, Cover, Dauer, Wiedergabeposition und die App, die gerade abspielt. Diese Daten werden nur auf deinem Mac angezeigt, nicht gespeichert und nicht übertragen.
 
-Lokal gespeichert werden nur deine Einstellungen („Bei Pause ausblenden“). „Beim Anmelden starten“ verwaltet macOS selbst.
+Für den Lautstärkeregler liest die App das aktuelle Ausgabegerät deines Mac (Name, z. B. „AirPods Pro“, und Lautstärke) und ändert es auf deinen Wunsch. Auch das bleibt auf deinem Mac.
+
+## Apple Music steuern
+
+Zum Favorisieren steuert die App Apple Music über AppleScript. macOS fragt dich beim ersten Mal um Erlaubnis; du kannst sie jederzeit unter Systemeinstellungen › Datenschutz & Sicherheit › Automation widerrufen. Gelesen und geändert wird nur, ob der aktuelle Titel ein Favorit ist.
+
+## Einstellungen
+
+Lokal gespeichert werden nur deine Einstellungen (Bei Pause ausblenden, Kurz-Vorschau bei Songwechsel, Bildschirmwahl). „Beim Anmelden starten“ verwaltet macOS selbst.
 
 ## Deine Rechte
 

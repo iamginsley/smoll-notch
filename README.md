@@ -4,7 +4,12 @@ A tiny Dynamic Island for the MacBook notch that shows what is playing right now
 
 - **Compact:** artwork left of the notch, an equalizer tinted with the cover color right of it (the signature element).
 - **Expanded on hover:** artwork, title, album, artist, previous / play-pause / next and a seekable progress bar. Clicking the artwork brings the source app forward.
-- Menu bar only (no Dock icon), settings for launch at login and hiding while paused.
+- Peeks open for a moment when the track changes.
+- Gestures on the open island: two-finger swipe left/right skips, up/down changes the volume.
+- Volume slider with the current output device (AirPods, speakers, AirPlay) and a menu to switch it.
+- Favorite the current track in Apple Music (AppleScript, asks for Automation permission once).
+- Shows on the notch screen, the main screen or all screens; without a notch it floats as a pill.
+- Menu bar only (no Dock icon), settings for launch at login, hiding while paused, peeking and screens.
 - No backend, no account, nothing leaves the Mac.
 
 ## How Now Playing works
@@ -20,12 +25,14 @@ Consequences:
 ```
 SmollNotch/
   App/                 App entry, AppDelegate, launch flags
-  Core/Models/         NowPlaying
-  Core/Services/       NowPlayingService (adapter process), NowPlayingStream (JSON diff merging)
+  Core/Models/         NowPlaying, AudioOutput
+  Core/Services/       NowPlayingService (adapter process), NowPlayingStream (JSON diff merging),
+                       AudioOutputService (CoreAudio), FavoriteService (Apple Music via osascript)
   Core/Demo/           Demo source for screenshots (Debug only)
   Design/              Island colors, fonts, artwork tint
-  Features/Notch/      Island view, view model, shape, window controller
-  Features/Settings/   Settings view and view model
+  Features/Notch/      Shared playback view model, per-screen NotchIsland, layout, shape, gestures,
+                       island view, volume row, window controller
+  Features/Settings/   Settings view and view model, screen choice
 Vendor/MediaRemoteAdapter/  Adapter sources, built as an embedded (not linked) framework
 SmollNotchTests/       Unit tests (parsing, playback position, tint contrast)
 ```
