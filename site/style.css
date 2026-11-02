@@ -231,3 +231,46 @@ footer a:hover { color: var(--text); }
   .island .body { left: 112px; right: 18px; }
   .island .progress { left: 22px; right: 22px; }
 }
+
+/* Download page */
+.download { max-width: 860px; padding: 56px 0 0; }
+.dl-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 32px;
+  padding: 48px 32px; text-align: center; outline: none;
+}
+.dl-card h1 { font-size: clamp(32px, 5vw, 44px); letter-spacing: -0.03em; margin: 18px 0 6px; }
+.dl-icon { margin: 0 auto; filter: drop-shadow(0 18px 40px rgba(148, 122, 94, 0.25)); }
+.dl-meta { color: var(--text-2); margin: 0 0 26px; font-variant-numeric: tabular-nums; }
+.dl-status { color: var(--text-2); margin: 14px 0 0; }
+.dl-status:empty { display: none; }
+.button.large { min-height: 52px; padding: 0 30px; font-size: 18px; }
+.button.disabled { background: var(--surface-2); color: var(--text-2); cursor: default; transform: none; }
+.dl-facts {
+  list-style: none; padding: 0; margin: 40px 0 0; display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; text-align: left;
+}
+.dl-facts li { display: flex; gap: 12px; align-items: flex-start; color: var(--text-2); font-size: 15px; }
+.dl-facts svg { flex: none; color: var(--sand-light); margin-top: 2px; }
+.dl-facts b { color: var(--text); font-weight: 600; }
+
+.install { list-style: none; padding: 0; margin: 36px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: step; }
+.install li { background: var(--surface-2); border-radius: 22px; padding: 22px 18px; text-align: left; }
+.install h2 { font-size: 17px; margin: 14px 0 6px; letter-spacing: 0; }
+.install h2::before { counter-increment: step; content: counter(step) ". "; color: var(--sand-light); }
+.install p { margin: 0; color: var(--text-2); font-size: 15px; }
+.step-art { display: grid; place-items: center; height: 84px; background: var(--bg); border-radius: 14px; }
+.hints { margin-top: 28px; text-align: left; display: grid; gap: 10px; }
+.hints p { margin: 0; color: var(--text-2); font-size: 15px; }
+.hints b { color: var(--text); }
+
+.dl-notes { padding: 40px 0 0; }
+.dl-notes h2 { font-size: 24px; margin: 0 0 10px; }
+.dl-notes p, .dl-notes li { color: var(--text-2); }
+.dl-more { padding: 32px 0 0; color: var(--text-3); font-size: 15px; text-align: center; }
+.dl-more p { margin: 0 0 8px; }
+.dl-checksum code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; word-break: break-all; color: var(--text-2); }
+
+@media (max-width: 860px) {
+  .dl-facts, .install { grid-template-columns: 1fr; }
+  .dl-card { padding: 36px 20px; }
+}
