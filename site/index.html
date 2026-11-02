@@ -17,7 +17,7 @@
   <nav class="nav" aria-label="Hauptnavigation">
     <div class="wrap">
       <a class="brand" href="#top"><img src="assets/icon-64.png" alt=""> Smoll Notch</a>
-      <a class="button small" href="#download">Laden</a>
+      <a class="button small" href="download.html">Laden</a>
     </div>
   </nav>
 
@@ -27,7 +27,7 @@
         <h1>Deine Musik.<br><span>In der Notch.</span></h1>
         <p class="lead">Smoll Notch macht aus der Notch deines MacBook eine kleine Dynamic Island, die zeigt, was gerade läuft. Egal ob Apple Music, Spotify oder YouTube im Browser.</p>
         <div class="cta">
-          <a class="button" href="#download" data-download>
+          <a class="button" href="download.html">
             <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v9m0 0L4.5 6.5M8 10l3.5-3.5M2 14h12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Kostenlos laden
           </a>
@@ -147,7 +147,7 @@
           <img src="assets/icon-512.png" alt="Smoll Notch App-Symbol" width="96" height="96">
           <h2>Smoll Notch</h2>
           <p class="meta" style="margin:0 0 24px">Kostenlos · Version 1.0 · macOS 26 oder neuer</p>
-          <a class="button" data-download href="https://github.com/iamginsley/smoll-notch/releases/latest/download/SmollNotch.dmg">
+          <a class="button" href="download.html">
             <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v9m0 0L4.5 6.5M8 10l3.5-3.5M2 14h12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Für Mac laden
           </a>
@@ -191,10 +191,6 @@
   </footer>
 
   <script>
-    // One place for the download link. Points at the newest GitHub release.
-    const DOWNLOAD_URL = "https://github.com/iamginsley/smoll-notch/releases/latest/download/SmollNotch.dmg";
-    document.querySelectorAll("[data-download]").forEach((link) => { link.href = DOWNLOAD_URL; });
-
     // The demo island: opens on hover, focus or Enter, and on its own every few seconds until someone tries it.
     const island = document.getElementById("island");
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

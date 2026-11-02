@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laden · Smoll Notch</title>
+  <meta name="description" content="Smoll Notch für Mac kostenlos laden. Signiert und von Apple notarisiert.">
+  <meta name="theme-color" content="#08080a">
+  <link rel="icon" href="assets/icon-64.png">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="assets/icon-64.png" alt=""> Smoll Notch</a>
+      <a class="button small secondary" href="index.html#funktionen">Funktionen</a>
+    </div>
+  </nav>
+
+  <main class="wrap download">
+    <!-- Before the click: what you get -->
+    <section class="dl-card" id="offer" aria-labelledby="dl-title">
+      <img class="dl-icon" src="assets/icon-512.png" alt="" width="128" height="128">
+      <h1 id="dl-title">Smoll Notch für Mac</h1>
+      <p class="dl-meta" id="release-meta">Kostenlos · macOS 26 oder neuer</p>
+      <a class="button large" id="download-button" href="https://github.com/iamginsley/smoll-notch/releases/latest/download/SmollNotch.dmg">
+        <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v9m0 0L4.5 6.5M8 10l3.5-3.5M2 14h12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="download-label">Herunterladen</span>
+      </a>
+      <p class="dl-status" id="release-status" role="status"></p>
+
+      <ul class="dl-facts">
+        <li>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 1.8 3 4.5v5c0 4.2 3 7.4 7 8.7 4-1.3 7-4.5 7-8.7v-5z"/><path d="m6.8 10 2.2 2.2 4.2-4.4"/></svg>
+          <span><b>Signiert und notarisiert.</b> Von Apple auf Schadsoftware geprüft, öffnet ohne Warnung.</span>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="3"/><path d="M7 10h6M10 7v6"/></svg>
+          <span><b>Apple Silicon und Intel.</b> Eine App für jeden Mac mit macOS 26 oder neuer.</span>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M5 15 15 5"/></svg>
+          <span><b>Kein Konto, kein Tracking.</b> Alles bleibt auf deinem Mac. <a href="datenschutz.html">Datenschutz</a></span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- After the click: how to install -->
+    <section class="dl-card" id="thanks" hidden aria-labelledby="thanks-title" tabindex="-1">
+      <img class="dl-icon" src="assets/icon-512.png" alt="" width="96" height="96">
+      <h1 id="thanks-title">Danke fürs Laden!</h1>
+      <p class="dl-meta">Der Download startet gleich. Falls nicht, <a id="retry" href="#">klick hier</a>.</p>
+      <ol class="install">
+        <li>
+          <div class="step-art" aria-hidden="true">
+            <svg viewBox="0 0 120 72" width="120" height="72"><rect x="38" y="8" width="44" height="54" rx="8" fill="#1c1c1f" stroke="#d9bf9b" stroke-width="2"/><path d="M50 30h20M50 38h14" stroke="#d9bf9b" stroke-width="3" stroke-linecap="round"/><text x="60" y="56" fill="#f5f5f7" font-size="9" text-anchor="middle" font-family="-apple-system, sans-serif">.dmg</text></svg>
+          </div>
+          <h2>DMG öffnen</h2>
+          <p>Öffne <b>SmollNotch.dmg</b> aus deinem Download-Ordner mit einem Doppelklick.</p>
+        </li>
+        <li>
+          <div class="step-art" aria-hidden="true">
+            <svg viewBox="0 0 120 72" width="120" height="72"><image href="assets/icon-180.png" x="6" y="16" width="40" height="40"/><path d="M52 36h20m-6-6 6 6-6 6" stroke="#d9bf9b" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M80 22h11l4 4h17v26a4 4 0 0 1-4 4H84a4 4 0 0 1-4-4z" fill="#3b82f6" opacity=".85"/></svg>
+          </div>
+          <h2>In „Programme“ ziehen</h2>
+          <p>Zieh das Symbol von Smoll Notch auf den Ordner „Programme“ im selben Fenster.</p>
+        </li>
+        <li>
+          <div class="step-art" aria-hidden="true">
+            <svg viewBox="28 4 64 48" width="120" height="72"><rect x="10" y="10" width="100" height="10" rx="2" fill="#1c1c1f"/><path d="M42 10h36v8q0 6-6 6H48q-6 0-6-6z" fill="#000"/><rect x="46" y="12" width="7" height="7" rx="2" fill="url(#g)"/><g fill="#c4964a"><rect x="66" y="13" width="2" height="5" rx="1"/><rect x="69.5" y="12" width="2" height="7" rx="1"/><rect x="73" y="14" width="2" height="4" rx="1"/></g><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ee8f45"/><stop offset="1" stop-color="#7d8a25"/></linearGradient></defs><text x="60" y="40" fill="#f5f5f7" font-size="7" text-anchor="middle" font-family="-apple-system, sans-serif">Musik abspielen</text></svg>
+          </div>
+          <h2>Starten und Musik an</h2>
+          <p>Öffne Smoll Notch aus „Programme“ und spiel etwas ab. Die Insel erscheint in der Notch.</p>
+        </li>
+      </ol>
+      <div class="hints">
+        <p><b>Kein Dock-Symbol?</b> Richtig so. Smoll Notch lebt in der Notch und in der Menüleiste. Dort findest du auch die Einstellungen.</p>
+        <p><b>Abfrage beim Favorisieren?</b> Beim ersten Stern fragt macOS, ob Smoll Notch Apple Music steuern darf. Erlaube es, sonst bleibt der Stern grau.</p>
+        <p><b>Bei jeder Anmeldung starten?</b> Schalte es in den Einstellungen ein: Menüleiste › Smoll Notch › Einstellungen.</p>
+      </div>
+    </section>
+
+    <section class="dl-notes" id="notes" hidden aria-labelledby="notes-title">
+      <h2 id="notes-title">Neu in Version <span id="notes-version"></span></h2>
+      <div id="notes-body"></div>
+    </section>
+
+    <section class="dl-more">
+      <p>Ältere Versionen und Prüfsummen findest du auf <a href="https://github.com/iamginsley/smoll-notch/releases">GitHub</a>. Fragen oder Probleme? <a href="mailto:dominik.gintsberger@outlook.de">Schreib mir</a>.</p>
+      <p class="dl-checksum" id="checksum" hidden>SHA-256: <code id="checksum-value"></code></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Dominik Gintsberger</span>
+      <span><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a><a href="mailto:dominik.gintsberger@outlook.de">Kontakt</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // The newest release on GitHub. The release script uploads the DMG under this stable name.
+    const REPO = "iamginsley/smoll-notch";
+    const ASSET = "SmollNotch.dmg";
+    const DOWNLOAD_URL = `https://github.com/${REPO}/releases/latest/download/${ASSET}`;
+
+    const $ = (id) => document.getElementById(id);
+    const button = $("download-button");
+    button.href = DOWNLOAD_URL;
+
+    const formatSize = (bytes) => `${(bytes / 1_000_000).toLocaleString("de-AT", { maximumFractionDigits: 1 })} MB`;
+    const formatDate = (iso) => new Date(iso).toLocaleDateString("de-AT", { day: "numeric", month: "long", year: "numeric" });
+
+    // Release notes are Markdown; show them as plain paragraphs and bullet lists, never as HTML.
+    function renderNotes(markdown) {
+      const body = $("notes-body");
+      let list = null;
+      for (const raw of markdown.split(/\r?\n/)) {
+        const line = raw.trim();
+        if (!line || line.startsWith("#")) { list = null; continue; }
+        const bullet = line.match(/^[-*]\s+(.*)$/);
+        if (bullet) {
+          if (!list) { list = document.createElement("ul"); body.append(list); }
+          const item = document.createElement("li");
+          item.textContent = bullet[1].replace(/\*\*/g, "");
+          list.append(item);
+        } else {
+          list = null;
+          const paragraph = document.createElement("p");
+          paragraph.textContent = line.replace(/\*\*/g, "");
+          body.append(paragraph);
+        }
+      }
+    }
+
+    // Version, date, size and checksum come from GitHub. If that fails, the static link still works.
+    fetch(`https://api.github.com/repos/${REPO}/releases/latest`, { headers: { Accept: "application/vnd.github+json" } })
+      .then((response) => {
+        if (response.status === 404) throw new Error("no-release");
+        if (!response.ok) throw new Error("unavailable");
+        return response.json();
+      })
+      .then((release) => {
+        const version = release.tag_name.replace(/^v/, "");
+        const asset = (release.assets || []).find((a) => a.name === ASSET);
+        if (!asset) throw new Error("no-release");
+        $("release-meta").textContent =
+          `Version ${version} · ${formatDate(release.published_at)} · ${formatSize(asset.size)} · Kostenlos`;
+        $("download-label").textContent = `Version ${version} laden`;
+        if (asset.digest && asset.digest.startsWith("sha256:")) {
+          $("checksum-value").textContent = asset.digest.slice(7);
+          $("checksum").hidden = false;
+        }
+        if (release.body && release.body.trim()) {
+          $("notes-version").textContent = version;
+          renderNotes(release.body);
+          $("notes").hidden = false;
+        }
+      })
+      .catch((error) => {
+        if (error.message !== "no-release") return;
+        button.removeAttribute("href");
+        button.setAttribute("aria-disabled", "true");
+        button.classList.add("disabled");
+        $("download-label").textContent = "Bald verfügbar";
+        $("release-status").textContent = "Die erste Version erscheint in Kürze. Schau bald wieder vorbei.";
+      });
+
+    // After the click the browser downloads the file and this page switches to the install steps.
+    const showThanks = () => {
+      $("offer").hidden = true;
+      $("thanks").hidden = false;
+      $("thanks").focus();
+      window.scrollTo(0, 0);
+    };
+    button.addEventListener("click", (event) => {
+      if (!button.hasAttribute("href")) { event.preventDefault(); return; }
+      setTimeout(showThanks, 150);
+    });
+    $("retry").addEventListener("click", (event) => {
+      event.preventDefault();
+      window.location.href = DOWNLOAD_URL;
+    });
+  </script>
+</body>
+</html>
