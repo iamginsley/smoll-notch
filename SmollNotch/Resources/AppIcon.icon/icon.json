@@ -1,0 +1,44 @@
+{
+  "fill": {
+    "solid": "srgb:0.10980,0.10980,0.11765,1.00000"
+  },
+  "groups": [
+    {
+      "name": "Equalizer",
+      "layers": [
+        {
+          "image-name": "bars.svg",
+          "name": "bars"
+        }
+      ],
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.35
+      },
+      "translucency": {
+        "enabled": false,
+        "value": 0.5
+      }
+    },
+    {
+      "name": "Notch",
+      "layers": [
+        {
+          "image-name": "notch.svg",
+          "name": "notch"
+        }
+      ],
+      "shadow": {
+        "kind": "none",
+        "opacity": 0
+      },
+      "translucency": {
+        "enabled": false,
+        "value": 0.5
+      }
+    }
+  ],
+  "supported-platforms": {
+    "squares": "shared"
+  }
+}
