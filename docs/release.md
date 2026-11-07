@@ -45,6 +45,17 @@ GitHub Release.
 `scripts/release.sh --skip-notarize` skips notarization for a quick local check. That DMG only opens
 without a Gatekeeper warning on this Mac.
 
+## Website
+
+The website lives in `site/` and is served by GitHub Pages from the `gh-pages` branch
+(https://iamginsley.github.io/smoll-notch/). After merging site changes into main:
+```
+scripts/publish-site.sh
+```
+The download page reads version, size and checksum of the latest release from the GitHub API, so a
+new release needs no website change. Preview locally with
+`python3 -m http.server 4173 --directory site`.
+
 ## After macOS updates
 
 Apple can close the MediaRemote workaround with any macOS update. After updating macOS, check that
